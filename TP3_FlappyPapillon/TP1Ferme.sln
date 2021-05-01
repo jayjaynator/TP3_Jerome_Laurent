@@ -5,6 +5,31 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TP1Ferme", "TP1Ferme\TP1Ferme.vcxproj", "{2E120BBF-05A6-4338-B208-B58D43ACF968}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dossier", "Dossier", "{EE70BB2E-F392-4C4E-B5F4-995C789A2ACE}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Diagramme0.png = Docs\Diagramme0.png
+		Docs\Diagramme1.png = Docs\Diagramme1.png
+		Docs\Diagramme2.png = Docs\Diagramme2.png
+		Docs\Diagramme3.jpg = Docs\Diagramme3.jpg
+		Docs\Diagramme4.png = Docs\Diagramme4.png
+		Docs\Diagramme5.png = Docs\Diagramme5.png
+		Docs\enonce.pdf = Docs\enonce.pdf
+		Docs\TP3 enonce.pdf = Docs\TP3 enonce.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{2E4DA62D-EA64-48CF-A63F-9A8EB1035067}"
+	ProjectSection(SolutionItems) = preProject
+		Images\acceleration.bmp = Images\acceleration.bmp
+		Images\bg.bmp = Images\bg.bmp
+		Images\bonus-vie.bmp = Images\bonus-vie.bmp
+		Images\coeur.bmp = Images\coeur.bmp
+		Images\filet.bmp = Images\filet.bmp
+		Images\game-over.bmp = Images\game-over.bmp
+		Images\papillon.bmp = Images\papillon.bmp
+		Images\ruche.bmp = Images\ruche.bmp
+		Images\toile.bmp = Images\toile.bmp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
