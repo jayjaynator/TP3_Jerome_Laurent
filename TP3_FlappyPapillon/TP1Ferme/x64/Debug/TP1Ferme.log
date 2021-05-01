@@ -1,0 +1,11 @@
+﻿  Game.cpp
+  Gnome.cpp
+  Input.cpp
+  main.cpp
+D:\03_Projets_Codes\BdB_C2_S2\00_TP3_FlappyPappillon\TP1Ferme\main.cpp(68,15): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  Oeuf.cpp
+  Partie.cpp
+  Poule.cpp
+  Render.cpp
+  Génération de code en cours...
+  TP1Ferme.vcxproj -> D:\03_Projets_Codes\BdB_C2_S2\00_TP3_FlappyPappillon\x64\Debug\TP1Ferme.exe
