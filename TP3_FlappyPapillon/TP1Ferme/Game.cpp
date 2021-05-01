@@ -1,3 +1,8 @@
+// Code TP1 modifé pour le PT3
+// Code créer par : Nicholas Hurtubise
+// Code modifié par : Jérôme Paupe et Laurent
+// 
+
 #include <iostream>
 
 #include <SDL.h>
