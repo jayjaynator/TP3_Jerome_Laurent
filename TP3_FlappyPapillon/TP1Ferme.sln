@@ -30,6 +30,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{2E4DA6
 		Images\toile.bmp = Images\toile.bmp
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs_Important", "Docs_Important", "{F739E3F0-D90E-4189-B9ED-92887C49577F}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Diagramme_Nicholas.png = Docs\Diagramme_Nicholas.png
+		Taches.txt = Taches.txt
+		Docs\TP3 enonce.pdf = Docs\TP3 enonce.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
