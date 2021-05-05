@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TP1Ferme", "TP1Ferme\TP1Ferme.vcxproj", "{2E120BBF-05A6-4338-B208-B58D43ACF968}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TP3", "TP1Ferme\TP1Ferme.vcxproj", "{2E120BBF-05A6-4338-B208-B58D43ACF968}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dossier", "Dossier", "{EE70BB2E-F392-4C4E-B5F4-995C789A2ACE}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dossier", "Dossier", "{EE70
 		Docs\Diagramme3.jpg = Docs\Diagramme3.jpg
 		Docs\Diagramme4.png = Docs\Diagramme4.png
 		Docs\Diagramme5.png = Docs\Diagramme5.png
-		Docs\enonce.pdf = Docs\enonce.pdf
+		Docs\Diagramme_Nicholas.png = Docs\Diagramme_Nicholas.png
 		Docs\TP3 enonce.pdf = Docs\TP3 enonce.pdf
 	EndProjectSection
 EndProject
