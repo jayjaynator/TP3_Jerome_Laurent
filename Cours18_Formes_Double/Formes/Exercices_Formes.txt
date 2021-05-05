@@ -1,0 +1,209 @@
+Formes
+======
+
+Pour cet exercice, on va graduellement construire un petit programme
+de dessin de formes à partir d'un mini-game engine presque vide...
+
+Téléchargez le projet formes-base.zip
+
+
+
+1. À la base, le code n'est pas tellement orienté objet...
+
+Dans la méthode Render() de Game.cpp, on a :
+
+    // On change la couleur pour du rouge : r=255, g=0, b=0, alpha=255 (opacité)
+    SDL_SetRenderDrawColor(Renderer, 255, 0, 0, 255);
+
+    // Dessin du rectangle
+    SDL_Rect Rect{.x = 300, .y = 150, .w = 50, .h = 50};
+    SDL_RenderFillRect(Renderer, &Rect);
+
+Pour dessiner un rectangle.
+
+À la place, on pourrait se faire une classe Rectangle qui gère sa
+position x/y, sa largeur/hauteur, et sa couleur, et qui sait comment
+se dessiner lui-même.
+
+Ajoutez une classe Rectangle au programme, qu'on peut construire avec:
+
+    Rectangle MonRectangle{X, Y, Largeur, Hauteur, CouleurR, CouleurG, CouleurB};
+
+
+Un Rectangle a une seule méthode pour le moment :
+
+    MonRectangle.Render(SDL_Renderer* Renderer)
+
+
+Créez un nouvel attribut de type Rectangle dans la classe `Game`, et
+dessinez-le dans la méthode Render() de l'objet Game.
+
+
+Le programme devrait donner exactement le même résultat qu'au début.
+
+
+2. Une `Bordure` est un `Rectangle`, mais qu'on dessine avec 4 lignes
+sur l'écran :
+
+
+      (x, y)                       (x + largeur, y)
+         A---------------------------B
+         |                           |
+         |                           |
+         |                           |
+         |                           |
+         |                           |
+         |                           |
+         C---------------------------D
+      (x, y + hauteur)             (x + largeur, y + hauteur)
+
+
+
+On peut dessiner une ligne avec la fonction :
+
+       SDL_RenderDrawLine(SDL_Renderer* Renderer, int X1, int Y1, int X2, int Y2);
+
+
+
+Ajoutez une `Bordure` *verte* quelque part sur votre dessin.
+
+
+Exemple de résultat:
+
+    http://165.227.34.49/~g316k/screen/ea412e8b5df6415036a98335ffea8b91.png
+
+
+
+3. On peut généraliser le concept en faisant plutôt une `Forme`
+
+Un `Rectangle` *est une* `Forme`
+
+
+Une `Forme` possède une couleur, les sous-classes de `Forme`
+définissent le reste de ce qui la compose.
+
+
+Il devrait être impossible de créer un objet de type `Forme`
+directement`... Comment pouvez-vous faire ça?
+
+
+Ajoutez cette classe dans votre programme, on va s'en servir pour
+généraliser un peu le code qui suit.
+
+
+4. Un `Triangle` *est une* `Forme`
+
+Un triangle est composé de trois lignes, qui connectent 3 points :
+
+
+
+                     (X1, Y1)
+                        ^
+                       / \
+                      /   \
+                     /     \
+                    /       \
+                   /         \
+                  /           \
+                 ---------------
+              (X2, Y2)       (X3, Y3)
+
+
+Ajoutez un triangle *Bleu* au dessin, par exemple :
+
+    http://165.227.34.49/~g316k/screen/da83bd61df7be35f7603ed5dfeb90e91.png
+
+
+5. On va rendre ça un peu plus drôle...
+
+Remplacez les variables membres Rectangle/Bordure/Triangle de votre
+classe Game par un `vector<Forme*>` (un vecteur de pointeurs vers des
+formes)
+
+Modifiez le constructeur pour ajouter *à l'aide d'une boucle* :
+
+- Une rangée de rectangles de couleurs choisies au hasard
+- Une rangée de bordures de couleurs au hasard
+- Une rangée de triangles de couleurs au hasard
+
+
+Par exemple :
+
+    http://165.227.34.49/~g316k/screen/4dfcb19c8e144da2dc335d6b2c018979.png
+
+(ATTENTION: le triangle le plus à gauche est très pâle, mais il est là!)
+
+
+
+NOTE IMPORTANTE : si vous faites des `new`, vous **DEVEZ** faire des
+`delete`
+
+NOTE IMPORTANTE : si vous avez des méthodes virtuelles, vous **DEVEZ**
+avoir un destructeur virtuel dans la classe de base
+
+
+6. Vérifiez que le destructeur des sous-classes serait appelé au
+besoin...
+
+
+Ajoutez un destructeur dans la classe `Bordure` pour afficher :
+
+    On a détruit une bordure!
+
+
+Si le destructeur n'est pas affiché en quittant le programme (avec
+Escape), expliquez ce qui se passe et corrigez le problème...
+
+
+7. Modifiez Game.cpp pour ajouter une nouvelle forme au hasard :
+
+- De 50 pixels de large/haut
+- À une position au hasard dans l'écran
+- Avec une couleur au hasard
+
+À chaque fois qu'on appuie sur Espace.
+
+Pour les triangles, faites vos calculs correctement!
+
+
+Par exemple :
+
+    http://165.227.34.49/~g316k/screen/5b00d5b9f95e9e480daa58096e20c1db.png
+
+
+NOTE IMPORTANTE : si vous faites des `new`, vous **DEVEZ** faire des
+`delete`
+
+
+8. Ajoutez une méthode `Deplacer(int DeplacementX, int DeplacementY)`
+à toutes les `Formes`
+
+Quand on appuie sur les touches du clavier, on devrait *déplacer* les
+formes de 10px (selon la direction dans laquelle on a appuyé)
+
+
+9. Ajoutez une nouvelle forme `Cercle`
+
+Un Cercle *est une* Forme
+Vous avez déjà dessiné des cercles dans le passé :v)
+
+Essayez d'en dessiner avec la méthode:
+
+    SDL_RenderDrawPoint(renderer, x, y)
+
+Qui dessine un seul pixel de l'écran.
+
+Exemple de résultat quand on en ajoute dans le jeu :
+
+    http://165.227.34.49/~g316k/screen/307cac1f867b751a0995343375d84f62.png
+
+
+======================================================================
+=                               Bonus                                =
+======================================================================
+
+
+B1. Le code de Game.cpp contient un mélange de Game Engine général et
+de logique propre à *notre* programme...
+
+Avez-vous une idée pour améliorer ça?

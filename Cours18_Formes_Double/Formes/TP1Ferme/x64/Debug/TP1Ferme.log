@@ -1,0 +1,18 @@
+﻿  Bordure.cpp
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Bordure.cpp(26,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Bordure.cpp(27,11): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+  Cercle.cpp
+  Forme.cpp
+  Game.cpp
+  Rectangle.cpp
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Rectangle.cpp(57,16): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Rectangle.cpp(58,21): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Rectangle.cpp(60,21): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Rectangle.cpp(61,16): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Rectangle.cpp(64,13): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Rectangle.cpp(65,19): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Rectangle.cpp(67,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\TP1Ferme\Rectangle.cpp(68,14): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+  main.cpp
+  Génération de code en cours...
+  TP1Ferme.vcxproj -> D:\OneDrive\Bois de Boulogne\Cohorte 2 Session 2\Programmation 2\Projets\Cours18_Formes_Double\Formes\x64\Debug\Formes.exe
