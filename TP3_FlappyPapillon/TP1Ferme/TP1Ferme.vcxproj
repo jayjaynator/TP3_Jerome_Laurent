@@ -150,24 +150,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BonusDeVie.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="FiletAInsectes.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Gnome.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Oeuf.h" />
+    <ClInclude Include="PanneauDAcceleration.h" />
+    <ClInclude Include="Papillon.h" />
     <ClInclude Include="Partie.h" />
     <ClInclude Include="Poule.h" />
     <ClInclude Include="Render.h" />
+    <ClInclude Include="RucheDAbeilles.h" />
+    <ClInclude Include="ToileDAraignee.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BonusDeVie.cpp" />
+    <ClCompile Include="FiletAInsectes.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Gnome.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Oeuf.cpp" />
+    <ClCompile Include="PanneauDAcceleration.cpp" />
+    <ClCompile Include="Papillon.cpp" />
     <ClCompile Include="Partie.cpp" />
     <ClCompile Include="Poule.cpp" />
     <ClCompile Include="Render.cpp" />
+    <ClCompile Include="RucheDAbeilles.cpp" />
+    <ClCompile Include="ToileDAraignee.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -13,57 +13,129 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\TP3">
+      <UniqueIdentifier>{b690d99d-9a2b-4941-a9f0-23a990528c1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\TP1">
+      <UniqueIdentifier>{84748e06-b276-475a-a246-df9c4138158f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\TP3">
+      <UniqueIdentifier>{561bb614-9888-4971-8124-e4d321974771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\TP1">
+      <UniqueIdentifier>{f0ed2629-ed3e-4c6c-9caa-b9c902caadb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\TP3\0_Jeux">
+      <UniqueIdentifier>{98291ecb-ada1-4700-8eb3-ab1d2c896ba4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\TP3\1_Obstacles">
+      <UniqueIdentifier>{1c94114a-d6cc-4036-a54c-8a67b6da6466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\TP3\1_Obstacles">
+      <UniqueIdentifier>{09ac2985-9871-4e4c-8bc4-33092f907ce0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\TP3\0_Jeux">
+      <UniqueIdentifier>{0a53984d-a5d8-4d7d-8e29-e3be0a1ec9e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Render.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Constants.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Gnome.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\TP1</Filter>
     </ClInclude>
     <ClInclude Include="Oeuf.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Partie.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\TP1</Filter>
     </ClInclude>
     <ClInclude Include="Poule.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\TP1</Filter>
+    </ClInclude>
+    <ClInclude Include="Papillon.h">
+      <Filter>Fichiers d%27en-tête\TP3</Filter>
+    </ClInclude>
+    <ClInclude Include="FiletAInsectes.h">
+      <Filter>Fichiers d%27en-tête\TP3\1_Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Fichiers d%27en-tête\TP3</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
+      <Filter>Fichiers d%27en-tête\TP3\0_Jeux</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Fichiers d%27en-tête\TP3\0_Jeux</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Fichiers d%27en-tête\TP3\0_Jeux</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Fichiers d%27en-tête\TP3\0_Jeux</Filter>
+    </ClInclude>
+    <ClInclude Include="Partie.h">
+      <Filter>Fichiers d%27en-tête\TP3\0_Jeux</Filter>
+    </ClInclude>
+    <ClInclude Include="RucheDAbeilles.h">
+      <Filter>Fichiers d%27en-tête\TP3\1_Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>Fichiers d%27en-tête\TP3</Filter>
+    </ClInclude>
+    <ClInclude Include="ToileDAraignee.h">
+      <Filter>Fichiers d%27en-tête\TP3\1_Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="PanneauDAcceleration.h">
+      <Filter>Fichiers d%27en-tête\TP3\1_Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="BonusDeVie.h">
+      <Filter>Fichiers d%27en-tête\TP3\1_Obstacles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Gnome.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Oeuf.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Partie.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\TP1</Filter>
     </ClCompile>
     <ClCompile Include="Poule.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\TP1</Filter>
+    </ClCompile>
+    <ClCompile Include="Papillon.cpp">
+      <Filter>Fichiers sources\TP3</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Fichiers sources\TP3</Filter>
+    </ClCompile>
+    <ClCompile Include="Oeuf.cpp">
+      <Filter>Fichiers sources\TP1</Filter>
+    </ClCompile>
+    <ClCompile Include="FiletAInsectes.cpp">
+      <Filter>Fichiers sources\TP3\1_Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Fichiers sources\TP3\0_Jeux</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Fichiers sources\TP3\0_Jeux</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Fichiers sources\TP3\0_Jeux</Filter>
+    </ClCompile>
+    <ClCompile Include="Partie.cpp">
+      <Filter>Fichiers sources\TP3\0_Jeux</Filter>
     </ClCompile>
     <ClCompile Include="Render.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\TP3\0_Jeux</Filter>
+    </ClCompile>
+    <ClCompile Include="RucheDAbeilles.cpp">
+      <Filter>Fichiers sources\TP3\1_Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Fichiers sources\TP3</Filter>
+    </ClCompile>
+    <ClCompile Include="ToileDAraignee.cpp">
+      <Filter>Fichiers sources\TP3\1_Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="PanneauDAcceleration.cpp">
+      <Filter>Fichiers sources\TP3\1_Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="BonusDeVie.cpp">
+      <Filter>Fichiers sources\TP3\1_Obstacles</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
