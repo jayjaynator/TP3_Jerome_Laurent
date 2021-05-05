@@ -1,0 +1,27 @@
+
+Constant
+    int PositionXDebut = ?
+    int PositionYDebut = ?
+Partie
+Game
+Render
+
+GameObject
+    GetX(int X)
+    GetY(int Y)
+    SetX(int X)
+    SetY(int Y)
+
+Papillon <- GameObject
+    void Papillon::Update(long Millis)
+    void Papillon::DetectionCollision(Obstacle obstacle)
+
+Obstacle <- GameObject
+    
+
+1+ <- Obstacle <- GameObject
+2+ <- Obstacle <- GameObject
+
+1- <- Obstacle <- GameObject
+2- <- Obstacle <- GameObject
+3- <- Obstacle <- GameObject
