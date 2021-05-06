@@ -4,10 +4,9 @@
 #include <array>
 #include <vector>
 
-#include "Poule.h"
-#include "Render.h"
-#include "Gnome.h"
-#include "Oeuf.h"
+#include "Papillon.h"
+#include "Obstacle.h"
+
 
 class Partie
 {
@@ -22,9 +21,10 @@ public:
 private:
     bool PartieFinie;
 
-    Gnome Joueur;
-    std::array<Poule, 10> Poules;
-    std::vector<Oeuf> Oeufs;
+    Papillon papillon;
+    std::array<Obstacle, 5> obstacles;
+    //background peut etre
 
-    // TODO : Ajouter une grille 8 lignes x 12 colonnes d'objets `Plante`
+   
+
 };
