@@ -4,33 +4,31 @@
 
 enum class Sprite
 {
+    Background,
     GameOver,
-    GnomeLeft,
-    GnomeRight,
-    ChickenLeft,
-    ChickenRight,
-    Oeuf,
-    Plante1,
-    Plante2,
-    Plante3,
-    Plante4,
+    Papillon,
+    Coeur,
+    FileAInsecte,
+    RucheDAbeilles,
+    ToileDAraignee,
+    BonusDeVie,
+    PanneauDAcceleration
 };
 
 namespace Render
 {
-    const int NB_SPRITES = static_cast<int>(Sprite::Plante4) + 1;
+    const int NB_SPRITES = static_cast<int>(Sprite::PanneauDAcceleration) + 1;
     
     const std::array<const char*, NB_SPRITES> Paths = {
+        "imgs/bg.bmp",
         "imgs/game-over.bmp",
-        "imgs/gnome-left.bmp",
-        "imgs/gnome-right.bmp",
-        "imgs/cotcot-left.bmp",
-        "imgs/cotcot-right.bmp",
-        "imgs/egg.bmp",
-        "imgs/plante1.bmp",
-        "imgs/plante2.bmp",
-        "imgs/plante3.bmp",
-        "imgs/plante4.bmp"
+        "imgs/papillon.bmp",
+        "imgs/coeur.bmp",
+        "imgs/filet.bmp",
+        "imgs/ruche.bmp",
+        "imgs/toile.bmp",
+        "imgs/bonus-vie.bmp",
+        "imgs/acceleration.bmp"
     };
 
     void LoadImgs(SDL_Renderer* Renderer);

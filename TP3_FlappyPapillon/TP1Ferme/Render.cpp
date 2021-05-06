@@ -25,7 +25,7 @@ namespace Render
     }
     
     /**
-     * @see https://fr.wikibooks.org/wiki/Programmation_avec_la_SDL/Afficher_une_image
+     *  @see https://fr.wikibooks.org/wiki/Programmation_avec_la_SDL/Afficher_une_image
      */
     SDL_Texture* LoadImg(SDL_Renderer* Renderer, const char* src)
     {
