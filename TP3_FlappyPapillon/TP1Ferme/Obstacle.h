@@ -3,10 +3,11 @@
 
 class Obstacle : public GameObject
 {
-private:
-
 public:
+	Obstacle();
+	~Obstacle();
 
 protected:
+	double PositionX, PositionY;
 
 };

@@ -1,7 +1,6 @@
 
 Constant
-    int PositionXDebut = ?
-    int PositionYDebut = ?
+
 Partie
 Game
 Render
@@ -15,6 +14,7 @@ GameObject
 Papillon <- GameObject
     void Papillon::Update(long Millis)
     void Papillon::DetectionCollision(Obstacle obstacle)
+    void Papillon::Sauter()
 
 Obstacle <- GameObject
 
