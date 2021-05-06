@@ -19,5 +19,6 @@ protected:
 	double VelocityY=0;
 	double PositionX, PositionY;
 	double Largeur, Hauteur;
+	int Vies;
 
 };

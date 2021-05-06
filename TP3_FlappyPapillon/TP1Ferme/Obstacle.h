@@ -7,6 +7,9 @@ public:
 	Obstacle();
 	~Obstacle();
 
+	double GetLargeur();
+	double GetHauteur();
+
 protected:
 	double PositionX, PositionY;
 

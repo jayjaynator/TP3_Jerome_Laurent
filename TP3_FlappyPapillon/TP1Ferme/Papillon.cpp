@@ -8,6 +8,7 @@ Papillon::Papillon()
 	, PositionY{SCREEN_HEIGHT/2}
     , Largeur{60}
     , Hauteur{55}
+    , Vies{3}
 {}
 
 Papillon::~Papillon()
@@ -28,29 +29,26 @@ void Papillon::Sauter()
 
 bool Papillon::DetectionCollision(Obstacle* obstacle)
 {
-    //int Droite = PositionX + Largeur;
-    //int Gauche = PositionX;
-    //int Bas = PositionY + Hauteur;
-    //int Haut = PositionY;
+    int Gauche = PositionX;
+    int Droite = PositionX + Largeur;
+    int Haut = PositionY;
+    int Bas = PositionY + Hauteur;
 
-    //int GaucheAutre = obstacle->PositionX - obstacle->Largeur;
-    //int DroiteAutre = AutreRectangle->CentreX + AutreRectangle->Largeur / 2;
-    //int HautAutre = AutreRectangle->CentreY - AutreRectangle->Hauteur / 2;
-    //int BasAutre = AutreRectangle->CentreY + AutreRectangle->Hauteur / 2;
+    int GaucheAutre = obstacle->GetX();
+    int DroiteAutre = obstacle->GetX() + obstacle->GetLargeur();
+    int HautAutre = obstacle->GetY();
+    int BasAutre = obstacle->GetY() + obstacle->GetHauteur();
 
+    bool EnCollision =
+        !(
+            Droite < GaucheAutre ||
+            DroiteAutre < Gauche ||
+            Bas < HautAutre ||
+            BasAutre < Haut
+        );
 
-
-    //bool EnCollision = !
-    //(
-    //    Droite < GaucheAutre ||
-    //    DroiteAutre < Gauche ||
-    //    Bas < HautAutre ||
-    //    BasAutre < Haut
-    //);
-
-
-    //if (EnCollision)
-    //    return true;
-    //else
+    if (EnCollision)
+        return true;
+    else
         return false;
 }
