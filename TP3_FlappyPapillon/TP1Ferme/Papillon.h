@@ -2,6 +2,8 @@
 #include "GameObject.h"
 #include "Obstacle.h"
 
+// changement
+
 class Papillon : public GameObject
 {
 public:
