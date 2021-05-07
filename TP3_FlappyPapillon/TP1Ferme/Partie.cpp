@@ -8,6 +8,7 @@
 #include "Constants.h"
 #include "Obstacle.h"
 #include "Papillon.h"
+#include "Render.h"
 
 //はいはい！
 
@@ -60,7 +61,7 @@ void Partie::Render(SDL_Renderer* Renderer) const
 
    
     // Dessin du papillon
-    Render::DrawSprite(Renderer, Joueur.LooksLeft() ? Sprite::GnomeLeft : Sprite::GnomeRight, Joueur.GetPositionX(), Joueur.GetPositionY());
+    //Render::DrawSprite(Renderer, Joueur.LooksLeft() ? Sprite::GnomeLeft : Sprite::GnomeRight, Joueur.GetPositionX(), Joueur.GetPositionY());
 
    // if(PartieFinie)
     //    Render::DrawSprite(Renderer, Sprite::GameOver, SCREEN_WIDTH/2 - 300/2, SCREEN_HEIGHT/2 - 120/2);

@@ -10,6 +10,7 @@
 #include "Game.h"
 #include "Partie.h"
 #include "Input.h"
+#include "Render.h"
 
 using namespace std;
 

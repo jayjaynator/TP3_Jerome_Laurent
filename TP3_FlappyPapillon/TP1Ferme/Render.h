@@ -20,15 +20,15 @@ namespace Render
     const int NB_SPRITES = static_cast<int>(Sprite::PanneauDAcceleration) + 1;
     
     const std::array<const char*, NB_SPRITES> Paths = {
-        "imgs/bg.bmp",
-        "imgs/game-over.bmp",
-        "imgs/papillon.bmp",
-        "imgs/coeur.bmp",
-        "imgs/filet.bmp",
-        "imgs/ruche.bmp",
-        "imgs/toile.bmp",
-        "imgs/bonus-vie.bmp",
-        "imgs/acceleration.bmp"
+        "Images/bg.bmp",
+        "Images/game-over.bmp",
+        "Images/papillon.bmp",
+        "Images/coeur.bmp",
+        "Images/filet.bmp",
+        "Images/ruche.bmp",
+        "Images/toile.bmp",
+        "Images/bonus-vie.bmp",
+        "Images/acceleration.bmp"
     };
 
     void LoadImgs(SDL_Renderer* Renderer);
