@@ -12,6 +12,8 @@ public:
 	virtual double GetY() const;
 	virtual void SetX(double X);
 	virtual void SetY(double Y);
+	virtual double GetLargeur() const;
+	virtual double GetHauteur() const;
 
 protected:
 	double PositionX, PositionY;

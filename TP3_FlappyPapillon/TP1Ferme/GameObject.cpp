@@ -32,3 +32,13 @@ void GameObject::SetY(double Y)
 {
 	PositionY = Y;
 }
+
+double GameObject::GetLargeur() const
+{
+	return Largeur;
+}
+
+double GameObject::GetHauteur() const
+{
+	return Hauteur;
+}

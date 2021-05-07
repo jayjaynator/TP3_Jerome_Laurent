@@ -41,6 +41,16 @@ void Papillon::SetY(double Y)
     PositionY = Y;
 }
 
+double Papillon::GetLargeur() const
+{
+    return Largeur;
+}
+
+double Papillon::GetHauteur() const
+{
+    return Hauteur;
+}
+
 void Papillon::Sauter()
 {
 	VelocityY = -100;
