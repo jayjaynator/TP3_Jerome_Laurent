@@ -1,7 +1,6 @@
 #include "Constants.h"
 #include "Papillon.h"
 
-
 Papillon::Papillon()
 	: GameObject{}
 	, PositionX{2*SCREEN_WIDTH/5}
@@ -20,6 +19,26 @@ void Papillon::Update(long Millis)
 	double NbSecondes = Millis / 1000.0;
 
 	VelocityY += +AccelerationX * NbSecondes;
+}
+
+double Papillon::GetX() const
+{
+    return PositionX;
+}
+
+double Papillon::GetY() const
+{
+    return PositionY;
+}
+
+void Papillon::SetX(double X)
+{
+    PositionX = X;
+}
+
+void Papillon::SetY(double Y)
+{
+    PositionY = Y;
 }
 
 void Papillon::Sauter()

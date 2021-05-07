@@ -7,6 +7,8 @@ public:
 	Obstacle();
 	~Obstacle();
 
+	virtual void Update(long Millis) override;
+
 	double GetLargeur();
 	double GetHauteur();
 

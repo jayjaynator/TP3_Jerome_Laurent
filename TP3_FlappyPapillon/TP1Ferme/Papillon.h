@@ -8,7 +8,7 @@ public:
 	Papillon();
 	~Papillon();
 
-	void Update(long Millis);
+	virtual void Update(long Millis) override;
 
 	void Sauter();
 

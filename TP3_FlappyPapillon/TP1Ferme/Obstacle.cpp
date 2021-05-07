@@ -11,6 +11,12 @@ Obstacle::~Obstacle()
 
 }
 
+void Obstacle::Update(long Millis)
+{
+
+
+}
+
 double Obstacle::GetLargeur()
 {
 	return Largeur;
