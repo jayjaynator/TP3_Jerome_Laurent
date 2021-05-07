@@ -8,10 +8,10 @@ public:
 
 	virtual void Update(long Millis);
 
-	double GetX() const;
-	double GetY() const;
-	void SetX(double X);
-	void SetY(double Y);
+	virtual double GetX() const;
+	virtual double GetY() const;
+	virtual void SetX(double X);
+	virtual void SetY(double Y);
 
 protected:
 	double PositionX, PositionY;

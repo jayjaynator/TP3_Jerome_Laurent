@@ -10,6 +10,11 @@ public:
 
 	virtual void Update(long Millis) override;
 
+	virtual double GetX() const override;
+	virtual double GetY() const override;
+	virtual void SetX(double X) override;
+	virtual void SetY(double Y) override;
+
 	void Sauter();
 
 	bool DetectionCollision(Obstacle* obstacle);
