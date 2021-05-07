@@ -42,7 +42,7 @@ int main(int argc, char* args[])
     }
 
 
-    SDL_Surface* icon = SDL_LoadBMP("imgs/cotcot-right.bmp");
+    SDL_Surface* icon = SDL_LoadBMP("Images/papillon.bmp");
 
     if(!icon)
     {

@@ -36,7 +36,7 @@ void Partie::Update(long Millis)
     
 
 
-    papillon.Update(Millis);
+    Joueur.Update(Millis);
 
     // Mise à jour des obstacles
     for(auto& Obstacle : obstacles)
@@ -49,21 +49,23 @@ void Partie::Update(long Millis)
 
 void Partie::Render(SDL_Renderer* Renderer) const
 {
+
+    Render::DrawSprite(Renderer, Sprite::Background, 0, 0);
    /* 
     SDL_SetRenderDrawColor(Renderer, Rouge, Vert, Bleu, 255);
     SDL_RenderClear(Renderer);
   */
 
     // TODO: Dessin des obstacles 
-   // for(auto& O : Oeufs)
-   //     if(O.EstVisible())
+    // for(auto& O : Oeufs)
+    //     if(O.EstVisible())
     //        Render::DrawSprite(Renderer, Sprite::Oeuf, O.GetPositionX(), O.GetPositionY());
-
+    double testvar = Joueur.GetX();
    
     // Dessin du papillon
-    //Render::DrawSprite(Renderer, Joueur.LooksLeft() ? Sprite::GnomeLeft : Sprite::GnomeRight, Joueur.GetPositionX(), Joueur.GetPositionY());
+    Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
 
-   // if(PartieFinie)
+    // if(PartieFinie)
     //    Render::DrawSprite(Renderer, Sprite::GameOver, SCREEN_WIDTH/2 - 300/2, SCREEN_HEIGHT/2 - 120/2);
 }
 

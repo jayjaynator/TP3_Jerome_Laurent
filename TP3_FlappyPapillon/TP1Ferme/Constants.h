@@ -1,5 +1,5 @@
 #pragma once
 
-const char* const WINDOW_TITLE = "La Mini-Ferme de la Mort";
-const int SCREEN_WIDTH = 768;
-const int SCREEN_HEIGHT = 512;
+const char* const WINDOW_TITLE = "Flappy-Papillon";
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 400;
