@@ -29,15 +29,15 @@ void Papillon::Sauter()
 
 bool Papillon::DetectionCollision(Obstacle* obstacle)
 {
-    int Gauche = PositionX;
-    int Droite = PositionX + Largeur;
-    int Haut = PositionY;
-    int Bas = PositionY + Hauteur;
+    double Gauche = PositionX;
+    double Droite = PositionX + Largeur;
+    double Haut = PositionY;
+    double Bas = PositionY + Hauteur;
 
-    int GaucheAutre = obstacle->GetX();
-    int DroiteAutre = obstacle->GetX() + obstacle->GetLargeur();
-    int HautAutre = obstacle->GetY();
-    int BasAutre = obstacle->GetY() + obstacle->GetHauteur();
+    double GaucheAutre = obstacle->GetX();
+    double DroiteAutre = obstacle->GetX() + obstacle->GetLargeur();
+    double HautAutre = obstacle->GetY();
+    double BasAutre = obstacle->GetY() + obstacle->GetHauteur();
 
     bool EnCollision =
         !(
