@@ -1,10 +1,10 @@
 #include "GameObject.h"
 
-GameObject::GameObject()
-	:PositionX{0}
-	,PositionY{0}
-	,Largeur{0}
-	,Hauteur{0}
+GameObject::GameObject(double X, double Y, double L, double H)
+	:PositionX{X}
+	,PositionY{Y}
+	,Largeur{L}
+	,Hauteur{H}
 {
 }
 

@@ -3,17 +3,17 @@
 class GameObject
 {
 public:
-	GameObject();
+	GameObject(double X, double Y, double L, double H);
 	~GameObject() = default;
 
 	virtual void Update(long Millis);
 
-	virtual double GetX() const;
-	virtual double GetY() const;
-	virtual void SetX(double X);
-	virtual void SetY(double Y);
-	virtual double GetLargeur() const;
-	virtual double GetHauteur() const;
+	double GetX() const;
+	double GetY() const;
+	void SetX(double X);
+	void SetY(double Y);
+	double GetLargeur() const;
+	double GetHauteur() const;
 
 protected:
 	double PositionX, PositionY;

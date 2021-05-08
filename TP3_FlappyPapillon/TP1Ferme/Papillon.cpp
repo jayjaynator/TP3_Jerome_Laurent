@@ -1,14 +1,18 @@
 #include "Constants.h"
+#include "Input.h"
 #include "Papillon.h"
 
+
 Papillon::Papillon()
-	: GameObject{}
-	, PositionX{2*SCREEN_WIDTH/5}
-	, PositionY{SCREEN_HEIGHT/2}
-    , Largeur{60}
-    , Hauteur{55}
+    : GameObject{ 2 * SCREEN_WIDTH / 5, SCREEN_HEIGHT / 2, 60,55}
+    , AccelerationY{500}
+    , VelocityY{300}
     , Vies{3}
 {}
+// PositionX{2*SCREEN_WIDTH/5}
+// PositionY{SCREEN_HEIGHT/2}
+// 
+// 
 
 Papillon::~Papillon()
 {
@@ -18,42 +22,30 @@ void Papillon::Update(long Millis)
 {
 	double NbSecondes = Millis / 1000.0;
 
-	VelocityY += +AccelerationX * NbSecondes;
+	VelocityY += +AccelerationY * NbSecondes;
+
+    PositionY += VelocityY * NbSecondes;
+
+
+    if (Input::PressedKeys[Input::Space])
+        Sauter();
+
+    if (PositionY >= 0)
+    {
+
+    }
+
+    if (PositionY <= 400)
+    {
+
+    }
 }
 
-double Papillon::GetX() const
-{
-    return PositionX;
-}
 
-double Papillon::GetY() const
-{
-    return PositionY;
-}
-
-void Papillon::SetX(double X)
-{
-    PositionX = X;
-}
-
-void Papillon::SetY(double Y)
-{
-    PositionY = Y;
-}
-
-double Papillon::GetLargeur() const
-{
-    return Largeur;
-}
-
-double Papillon::GetHauteur() const
-{
-    return Hauteur;
-}
 
 void Papillon::Sauter()
 {
-	VelocityY = -100;
+	VelocityY = -300;
 }
 
 bool Papillon::DetectionCollision(Obstacle* obstacle)
