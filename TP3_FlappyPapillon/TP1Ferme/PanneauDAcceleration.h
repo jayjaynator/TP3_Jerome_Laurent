@@ -3,10 +3,14 @@
 
 class PanneauDAcceleration : public Obstacle
 {
-private:
-
 public:
+	PanneauDAcceleration();
+	~PanneauDAcceleration();
+
+	virtual void Update(long Millis) override;
 
 protected:
+	double AccelerationX;
+	double VelocityX;
 
 };

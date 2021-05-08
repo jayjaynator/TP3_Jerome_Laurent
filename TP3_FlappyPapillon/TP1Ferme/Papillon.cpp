@@ -2,27 +2,33 @@
 #include "Input.h"
 #include "Papillon.h"
 
+#include <iostream>
+using namespace std;
 
 Papillon::Papillon()
-    : GameObject{ 2 * SCREEN_WIDTH / 5, SCREEN_HEIGHT / 2, 60,55}
+    : GameObject{ 2*SCREEN_WIDTH/5, SCREEN_HEIGHT/2}
+    , Largeur{60}
+    , Hauteur{55}
     , AccelerationY{500}
-    , VelocityY{300}
+    , VelocityY{0}
     , Vies{3}
 {}
-// PositionX{2*SCREEN_WIDTH/5}
-// PositionY{SCREEN_HEIGHT/2}
-// 
-// 
 
 Papillon::~Papillon()
-{
-}
+{}
+
 
 void Papillon::Update(long Millis)
 {
 	double NbSecondes = Millis / 1000.0;
 
-	VelocityY += +AccelerationY * NbSecondes;
+    if (VelocityY < 300)
+    {
+        if (AccelerationActive)
+            VelocityY += +AccelerationY * NbSecondes + 30;
+        else
+            VelocityY += +AccelerationY * NbSecondes;
+    }
 
     PositionY += VelocityY * NbSecondes;
 
@@ -30,22 +36,68 @@ void Papillon::Update(long Millis)
     if (Input::PressedKeys[Input::Space])
         Sauter();
 
-    if (PositionY >= 0)
+    if (SortieHaut() || SortieBas())
     {
 
+        //Rebondir();
+        PerdreUneVie();
+        cout << "Rebondit et a " << Vies << " vies." << endl;
     }
 
-    if (PositionY <= 400)
+    if (SortieBas())
     {
 
+        //Rebondir();
+        PerdreUneVie();
+        cout << "Rebondit et a " << Vies << " vies." << endl;
     }
+
+    cout << "AccelerationY = " << AccelerationY << ", VelocityY = " << VelocityY << endl;
+
 }
 
+double Papillon::GetLargeur() const
+{
+    return Largeur;
+}
 
+double Papillon::GetHauteur() const
+{
+    return Hauteur;
+}
 
 void Papillon::Sauter()
 {
 	VelocityY = -300;
+}
+
+void Papillon::Rebondir()
+{
+    if (SortieHaut())
+        VelocityY = 300;
+    if (SortieBas())
+        VelocityY = -300;
+}
+
+void Papillon::PerdreUneVie()
+{
+    Vies = Vies - 1;
+}
+
+bool Papillon::SortieHaut()
+{
+    if (PositionY <= 0)
+        return true;
+    else
+        return false;
+}
+
+bool Papillon::SortieBas()
+{
+    if (PositionY >= 400-Hauteur)
+        return true;
+    else
+        return false;
 }
 
 bool Papillon::DetectionCollision(Obstacle* obstacle)
@@ -66,7 +118,7 @@ bool Papillon::DetectionCollision(Obstacle* obstacle)
             DroiteAutre < Gauche ||
             Bas < HautAutre ||
             BasAutre < Haut
-        );
+            );
 
     if (EnCollision)
         return true;

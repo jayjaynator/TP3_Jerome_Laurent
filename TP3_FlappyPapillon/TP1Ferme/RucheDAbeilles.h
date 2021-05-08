@@ -3,10 +3,14 @@
 
 class RucheDAbeilles : public Obstacle
 {
-private:
-
 public:
+	RucheDAbeilles();
+	~RucheDAbeilles();
+
+	virtual void Update(long Millis) override;
 
 protected:
+	double AccelerationX;
+	double VelocityX;
 
 };

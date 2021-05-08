@@ -3,10 +3,14 @@
 
 class ToileDAraignee : public Obstacle
 {
-private:
-
 public:
+	ToileDAraignee();
+	~ToileDAraignee();
+
+	virtual void Update(long Millis) override;
 
 protected:
+	double AccelerationX;
+	double VelocityX;
 
 };

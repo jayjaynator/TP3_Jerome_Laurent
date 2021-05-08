@@ -22,7 +22,7 @@ private:
     bool PartieFinie;
 
     Papillon Joueur;
-    std::array<Obstacle, 5> obstacles;
+    //std::array<Obstacle, 5> obstacles;
     //background peut etre
 
    

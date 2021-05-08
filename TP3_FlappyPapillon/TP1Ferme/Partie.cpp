@@ -23,9 +23,7 @@
 
 
 Partie::Partie()
-    : PartieFinie(false)
-{
-}
+    : PartieFinie(false) {}
 
 void Partie::Update(long Millis)
 {
@@ -39,10 +37,10 @@ void Partie::Update(long Millis)
     Joueur.Update(Millis);
 
     // Mise à jour des obstacles
-    for(auto& Obstacle : obstacles)
-    {
-        Obstacle.Update(Millis);
-    }
+    //for(auto& Obstacle : obstacles)
+    //{
+    //    Obstacle.Update(Millis);
+    //}
 
     VerifierPartieFinie();
 }

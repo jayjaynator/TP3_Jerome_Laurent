@@ -10,15 +10,21 @@ public:
 
 	virtual void Update(long Millis) override;
 
+	double GetLargeur() const;
+	double GetHauteur() const;
 
 	void Sauter();
+	void Rebondir();
+	void PerdreUneVie();
 
+	bool SortieHaut();
+	bool SortieBas();
 	bool DetectionCollision(Obstacle* obstacle);
 
 protected:
+	double Largeur, Hauteur;
 	double AccelerationY;
 	double VelocityY;
-
 	int Vies;
 
 };

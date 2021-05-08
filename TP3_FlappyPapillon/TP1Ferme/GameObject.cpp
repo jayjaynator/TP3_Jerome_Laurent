@@ -1,17 +1,13 @@
 #include "GameObject.h"
 
-GameObject::GameObject(double X, double Y, double L, double H)
+GameObject::GameObject(double X, double Y)
 	:PositionX{X}
 	,PositionY{Y}
-	,Largeur{L}
-	,Hauteur{H}
-{
-}
+	,AccelerationActive{false}
+{}
 
 void GameObject::Update(long Millis)
-{
-
-}
+{}
 
 double GameObject::GetX() const
 {
@@ -31,14 +27,4 @@ void GameObject::SetX(double X)
 void GameObject::SetY(double Y)
 {
 	PositionY = Y;
-}
-
-double GameObject::GetLargeur() const
-{
-	return Largeur;
-}
-
-double GameObject::GetHauteur() const
-{
-	return Hauteur;
 }
