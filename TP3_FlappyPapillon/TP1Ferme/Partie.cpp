@@ -23,9 +23,7 @@
 
 
 Partie::Partie()
-    : PartieFinie(false)
-{
-}
+    : PartieFinie(false) {}
 
 void Partie::Update(long Millis)
 {
@@ -39,40 +37,34 @@ void Partie::Update(long Millis)
     Joueur.Update(Millis);
 
     // Mise à jour des obstacles
-    for(auto& Obstacle : obstacles)
-    {
-        Obstacle.Update(Millis);
-    }
-
-    //methode qui efface hors decran
-
-    /*
-    if efface? 
-            
-            obstacles.makenewobs();
-    */
-
-
+    //for(auto& Obstacle : obstacles)
+    //{
+    //    Obstacle.Update(Millis);
+    //}
 
     VerifierPartieFinie();
 }
 
 void Partie::Render(SDL_Renderer* Renderer) const
 {
+
     Render::DrawSprite(Renderer, Sprite::Background, 0, 0);
-  
+   /* 
+    SDL_SetRenderDrawColor(Renderer, Rouge, Vert, Bleu, 255);
+    SDL_RenderClear(Renderer);
+  */
+
     // TODO: Dessin des obstacles 
-    for (auto& Obstacle : obstacles)
-    {
-        
-    }
-        //Render::DrawSprite(Renderer, Sprite::, O.GetPositionX(), O.GetPositionY());
+    // for(auto& O : Oeufs)
+    //     if(O.EstVisible())
+    //        Render::DrawSprite(Renderer, Sprite::Oeuf, O.GetPositionX(), O.GetPositionY());
+    double testvar = Joueur.GetX();
    
     // Dessin du papillon
     Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
 
-     if(PartieFinie)
-        Render::DrawSprite(Renderer, Sprite::GameOver, SCREEN_WIDTH/2 - 300/2, SCREEN_HEIGHT/2 - 120/2);
+    // if(PartieFinie)
+    //    Render::DrawSprite(Renderer, Sprite::GameOver, SCREEN_WIDTH/2 - 300/2, SCREEN_HEIGHT/2 - 120/2);
 }
 
 void Partie::VerifierPartieFinie()

@@ -4,12 +4,16 @@
 class Obstacle : public GameObject
 {
 public:
-	Obstacle(double X, double Y, double L, double H);
+	Obstacle();
 	~Obstacle();
 
 	virtual void Update(long Millis) override;
 
+	virtual double GetLargeur() = 0;
+	virtual double GetHauteur() = 0;
+
+	double PosYRand();
+
 protected:
-	double PositionX, PositionY;
 
 };

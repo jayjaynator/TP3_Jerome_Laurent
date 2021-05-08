@@ -1,18 +1,25 @@
+#include "Constants.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 #include "Obstacle.h"
 
-Obstacle::Obstacle(double X, double Y, double L, double H)
-	:GameObject{X,Y,L,H}
-	,PositionX{0}
-	,PositionY{0}
+Obstacle::Obstacle()
+	:GameObject{ 641, PosYRand()}
 {}
 
 Obstacle::~Obstacle()
-{
-
-}
+{}
 
 void Obstacle::Update(long Millis)
 {
 
 
 }
+
+double Obstacle::PosYRand()
+{
+	return 0.0;
+}
+
