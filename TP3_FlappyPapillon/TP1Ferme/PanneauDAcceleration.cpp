@@ -2,8 +2,9 @@
 
 PanneauDAcceleration::PanneauDAcceleration()
 	:Obstacle{}
-	,AccelerationX{ 0 }
 	,VelocityX{ 0 }
+	,Largeur{120}
+	,Hauteur{109}
 {}
 
 PanneauDAcceleration::~PanneauDAcceleration()
@@ -12,4 +13,14 @@ PanneauDAcceleration::~PanneauDAcceleration()
 void PanneauDAcceleration::Update(long Millis)
 {
 
+}
+
+double PanneauDAcceleration::GetLargeur()
+{
+	return Largeur;
+}
+
+double PanneauDAcceleration::GetHauteur()
+{
+	return Hauteur;
 }

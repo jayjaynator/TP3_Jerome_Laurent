@@ -9,8 +9,8 @@ public:
 
 	virtual void Update(long Millis) override;
 
-	double GetLargeur() const;
-	double GetHauteur() const;
+	virtual double GetLargeur() = 0;
+	virtual double GetHauteur() = 0;
 
 	double PosYRand();
 

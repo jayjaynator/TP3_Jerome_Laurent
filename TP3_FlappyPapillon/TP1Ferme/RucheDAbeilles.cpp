@@ -2,8 +2,9 @@
 
 RucheDAbeilles::RucheDAbeilles()
 	:Obstacle{}
-	, AccelerationX{ 0 }
-	, VelocityX{ 0 }
+	,VelocityX{0}
+	,Largeur{90}
+	,Hauteur{95}
 {}
 
 RucheDAbeilles::~RucheDAbeilles()
@@ -12,4 +13,14 @@ RucheDAbeilles::~RucheDAbeilles()
 
 void RucheDAbeilles::Update(long Millis)
 {
+}
+
+double RucheDAbeilles::GetLargeur()
+{
+	return Largeur;
+}
+
+double RucheDAbeilles::GetHauteur()
+{
+	return Hauteur;
 }
