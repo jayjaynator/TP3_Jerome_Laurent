@@ -1,7 +1,7 @@
 #include "FiletAInsectes.h"
 
 FiletAInsectes::FiletAInsectes()
-	:Obstacle{}
+	:Obstacle{2}
 	,VelocityX{0}
 	,Largeur{78}
 	,Hauteur{88}

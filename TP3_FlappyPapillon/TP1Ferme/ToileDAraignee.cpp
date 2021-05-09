@@ -1,7 +1,7 @@
 #include "ToileDAraignee.h"
 
 ToileDAraignee::ToileDAraignee()
-	:Obstacle{}
+	:Obstacle{5}
 	,VelocityX{0}
 	,Largeur{99}
 	,Hauteur{99}
@@ -10,11 +10,6 @@ ToileDAraignee::ToileDAraignee()
 ToileDAraignee::~ToileDAraignee()
 {}
 
-void ToileDAraignee::Update(long Millis)
-{
-
-
-}
 
 double ToileDAraignee::GetLargeur()
 {
