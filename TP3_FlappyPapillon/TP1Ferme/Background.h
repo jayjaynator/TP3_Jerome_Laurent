@@ -8,11 +8,10 @@ public:
 	Background(double PositionDepartX);
 	~Background();
 
-	void Update(double BGSpeed);
+	void Update(long Millis);
 	double GetPositionX() const;
 
 
 private:
 	double PositionX;
-	//double BGSpeed = 1;
 };

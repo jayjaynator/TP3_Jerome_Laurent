@@ -35,7 +35,6 @@ void Partie::Update(long Millis)
         return;
     
 
-
     Joueur.Update(Millis);
 
     // Mise à jour des obstacles
@@ -45,8 +44,8 @@ void Partie::Update(long Millis)
     //}
 
 
-    BG1.Update(GameSpeedX);
-    BG2.Update(GameSpeedX);
+    BG1.Update(Millis);
+    BG2.Update(Millis);
 
     VerifierPartieFinie();
 }
@@ -68,7 +67,8 @@ void Partie::Render(SDL_Renderer* Renderer) const
   */
 
     // TODO: Dessin des obstacles 
-    // for(auto& O : Oeufs)
+    // for(auto& Obstacle : obstacles)
+    //          switch type dobstacle
     //        Render::DrawSprite(Renderer, Sprite::Oeuf, O.GetPositionX(), O.GetPositionY());
    
     

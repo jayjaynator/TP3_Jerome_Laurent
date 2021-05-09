@@ -15,12 +15,12 @@ Background::~Background()
 {
 }
 
-void Background::Update(double BGSpeed)
+void Background::Update(long Millis)
 {
 	if (PositionX == (-SCREEN_WIDTH))
 		PositionX = SCREEN_WIDTH;
 	
-		PositionX -= BGSpeed;
+		PositionX -= 0.2 * Millis;
 }
 
 double Background::GetPositionX() const
