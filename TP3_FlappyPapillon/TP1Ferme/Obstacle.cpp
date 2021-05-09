@@ -6,7 +6,7 @@
 #include "Obstacle.h"
 
 Obstacle::Obstacle()
-	:GameObject{ 641, PosYRand()}
+	:GameObject{ SCREEN_WIDTH+1, PosYRand()}
 {}
 
 Obstacle::~Obstacle()
@@ -14,7 +14,6 @@ Obstacle::~Obstacle()
 
 void Obstacle::Update(long Millis)
 {
-
 
 }
 
