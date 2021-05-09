@@ -12,6 +12,7 @@ Papillon::Papillon()
     , AccelerationY{500}
     , VelocityY{0}
     , Vies{3}
+    , Invulnerable{false}
 {}
 
 Papillon::~Papillon()
@@ -20,39 +21,41 @@ Papillon::~Papillon()
 
 void Papillon::Update(long Millis)
 {
-	double NbSecondes = Millis / 1000.0;
+	NbSecondes = Millis / 1000.0;
 
-    if (VelocityY < 300)
-    {
-        if (AccelerationActive)
-            VelocityY += +AccelerationY * NbSecondes + 30;
-        else
-            VelocityY += +AccelerationY * NbSecondes;
-    }
+
+    if (VelocityPlusGrandA299())
+        ;
+    else
+        GraviteAffecteVelocite();
+
 
     PositionY += VelocityY * NbSecondes;
+    //cout << "AccelerationY = " << AccelerationY << ", VelocityY = " << VelocityY << endl;
 
 
     if (Input::PressedKeys[Input::Space])
         Sauter();
 
     if (SortieHaut() || SortieBas())
-    {
+        Rebondir();
 
-        //Rebondir();
-        PerdreUneVie();
-        cout << "Rebondit et a " << Vies << " vies." << endl;
-    }
 
-    if (SortieBas())
-    {
 
-        //Rebondir();
-        PerdreUneVie();
-        cout << "Rebondit et a " << Vies << " vies." << endl;
-    }
 
-    cout << "AccelerationY = " << AccelerationY << ", VelocityY = " << VelocityY << endl;
+    //if (Invulnerable)
+    //{
+    //    if (NbSecInv <= 0)
+    //    {
+    //        Invulnerable = false;
+    //        NbSecInv = 3;
+    //    }
+
+    //    if (NbSecInv > 0)
+    //    {
+    //        NbSecInv = -NbSecondes;
+    //    }
+    //}
 
 }
 
@@ -60,17 +63,21 @@ double Papillon::GetLargeur() const
 {
     return Largeur;
 }
-
 double Papillon::GetHauteur() const
 {
     return Hauteur;
 }
-
+void Papillon::GraviteAffecteVelocite()
+{
+    if (AccelerationActive)
+        VelocityY += +AccelerationY * NbSecondes + 30;
+    else
+        VelocityY += +AccelerationY * NbSecondes;
+}
 void Papillon::Sauter()
 {
 	VelocityY = -300;
 }
-
 void Papillon::Rebondir()
 {
     if (SortieHaut())
@@ -78,12 +85,18 @@ void Papillon::Rebondir()
     if (SortieBas())
         VelocityY = -300;
 }
-
 void Papillon::PerdreUneVie()
 {
     Vies = Vies - 1;
 }
 
+bool Papillon::VelocityPlusGrandA299()
+{
+    if (VelocityY > 299)
+        return true;
+    else
+        return false;
+}
 bool Papillon::SortieHaut()
 {
     if (PositionY <= 0)
@@ -91,7 +104,6 @@ bool Papillon::SortieHaut()
     else
         return false;
 }
-
 bool Papillon::SortieBas()
 {
     if (PositionY >= 400-Hauteur)
@@ -99,7 +111,6 @@ bool Papillon::SortieBas()
     else
         return false;
 }
-
 bool Papillon::DetectionCollision(Obstacle* obstacle)
 {
     double Gauche = PositionX;
@@ -118,14 +129,16 @@ bool Papillon::DetectionCollision(Obstacle* obstacle)
             DroiteAutre < Gauche ||
             Bas < HautAutre ||
             BasAutre < Haut
-            );
+        );
+
+
+
 
     if (EnCollision)
         return true;
     else
         return false;
 }
-
 int Papillon::GetVies() const
 {
     return Vies;

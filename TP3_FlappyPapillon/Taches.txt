@@ -2,6 +2,11 @@
 Constant
 
 Partie
+Partie::Update
+    // Instancier les obstacles de facon alleatoire
+    // Updater les obstacles
+    // Suprimer les obstacles qui sort de l'ecran
+
 Game
 Render
 

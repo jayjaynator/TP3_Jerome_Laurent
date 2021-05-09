@@ -13,10 +13,12 @@ public:
 	double GetLargeur() const;
 	double GetHauteur() const;
 
+	void GraviteAffecteVelocite();
 	void Sauter();
 	void Rebondir();
 	void PerdreUneVie();
 
+	bool VelocityPlusGrandA299();
 	bool SortieHaut();
 	bool SortieBas();
 	bool DetectionCollision(Obstacle* obstacle);
@@ -28,5 +30,9 @@ protected:
 	double AccelerationY;
 	double VelocityY;
 	int Vies;
+	bool Invulnerable;
+
+private:
+	double NbSecondes=0;
 
 };
