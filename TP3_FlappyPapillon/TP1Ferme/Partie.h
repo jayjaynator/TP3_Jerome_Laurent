@@ -6,6 +6,8 @@
 
 #include "Papillon.h"
 #include "Obstacle.h"
+#include "Background.h"
+#include "Constants.h"
 
 
 class Partie
@@ -23,8 +25,10 @@ private:
 
     Papillon Joueur;
     //std::array<Obstacle, 5> obstacles;
-    //background peut etre
-
+    
+//background peut etre
+    Background BG1 = Background(0); Background BG2 = Background(SCREEN_WIDTH);
+	
    
 
 };

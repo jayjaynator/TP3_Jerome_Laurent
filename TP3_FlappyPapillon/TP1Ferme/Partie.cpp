@@ -9,6 +9,7 @@
 #include "Obstacle.h"
 #include "Papillon.h"
 #include "Render.h"
+#include "Background.h"
 
 //はいはい！
 
@@ -21,6 +22,7 @@
 #include "BonusDeVie.h"
 #include "PanneauDAcceleration.h"
 
+#include <iostream>
 
 Partie::Partie()
     : PartieFinie(false) {}
@@ -42,13 +44,26 @@ void Partie::Update(long Millis)
     //    Obstacle.Update(Millis);
     //}
 
+    std::cout<<BG1.GetPositionX()<<"OGTCIFHCIY";
+    BG2.GetPositionX();
+
+    BG1.Update();
+    BG2.Update();
+
     VerifierPartieFinie();
 }
 
 void Partie::Render(SDL_Renderer* Renderer) const
 {
+	
+	
+    //render BG1
+    Render::DrawSprite(Renderer, Sprite::Background, BG1.GetPositionX(), 0);
+    
+    //render BG2
+    Render::DrawSprite(Renderer, Sprite::Background, BG2.GetPositionX(), 0);
 
-    Render::DrawSprite(Renderer, Sprite::Background, 0, 0);
+    
    /* 
     SDL_SetRenderDrawColor(Renderer, Rouge, Vert, Bleu, 255);
     SDL_RenderClear(Renderer);
