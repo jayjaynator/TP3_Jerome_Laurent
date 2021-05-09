@@ -20,6 +20,8 @@ public:
 	bool SortieHaut();
 	bool SortieBas();
 	bool DetectionCollision(Obstacle* obstacle);
+	int GetVies() const;
+
 
 protected:
 	double Largeur, Hauteur;

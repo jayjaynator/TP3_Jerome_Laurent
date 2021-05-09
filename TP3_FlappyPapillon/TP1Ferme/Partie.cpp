@@ -44,11 +44,9 @@ void Partie::Update(long Millis)
     //    Obstacle.Update(Millis);
     //}
 
-    std::cout<<BG1.GetPositionX()<<"OGTCIFHCIY";
-    BG2.GetPositionX();
 
-    BG1.Update();
-    BG2.Update();
+    BG1.Update(GameSpeedX);
+    BG2.Update(GameSpeedX);
 
     VerifierPartieFinie();
 }
@@ -71,18 +69,19 @@ void Partie::Render(SDL_Renderer* Renderer) const
 
     // TODO: Dessin des obstacles 
     // for(auto& O : Oeufs)
-    //     if(O.EstVisible())
     //        Render::DrawSprite(Renderer, Sprite::Oeuf, O.GetPositionX(), O.GetPositionY());
-    double testvar = Joueur.GetX();
+   
+    
    
     // Dessin du papillon
     Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
 
-    // if(PartieFinie)
-    //    Render::DrawSprite(Renderer, Sprite::GameOver, SCREEN_WIDTH/2 - 300/2, SCREEN_HEIGHT/2 - 120/2);
+     if(PartieFinie)
+        Render::DrawSprite(Renderer, Sprite::GameOver, SCREEN_WIDTH/2 - 300/2, SCREEN_HEIGHT/2 - 120/2);
 }
 
 void Partie::VerifierPartieFinie()
 {
-    //if papillon vies == 0, set partiefine = true
+    if (Joueur.GetVies() == 0)
+        PartieFinie = true;
 }

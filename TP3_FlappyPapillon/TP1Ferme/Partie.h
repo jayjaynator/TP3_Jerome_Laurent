@@ -29,6 +29,6 @@ private:
 //background peut etre
     Background BG1 = Background(0); Background BG2 = Background(SCREEN_WIDTH);
 	
-   
+    double GameSpeedX = 1;
 
 };

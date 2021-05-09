@@ -125,3 +125,8 @@ bool Papillon::DetectionCollision(Obstacle* obstacle)
     else
         return false;
 }
+
+int Papillon::GetVies() const
+{
+    return Vies;
+}

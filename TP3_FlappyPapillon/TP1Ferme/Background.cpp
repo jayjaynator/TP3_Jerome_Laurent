@@ -15,7 +15,7 @@ Background::~Background()
 {
 }
 
-void Background::Update()
+void Background::Update(double BGSpeed)
 {
 	if (PositionX == (-SCREEN_WIDTH))
 		PositionX = SCREEN_WIDTH;
