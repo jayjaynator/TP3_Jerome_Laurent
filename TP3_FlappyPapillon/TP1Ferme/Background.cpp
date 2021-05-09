@@ -17,7 +17,7 @@ Background::~Background()
 
 void Background::Update(long Millis)
 {
-	if (PositionX == (-SCREEN_WIDTH))
+	if (PositionX < (-SCREEN_WIDTH))
 		PositionX = SCREEN_WIDTH;
 	
 		PositionX -= 0.2 * Millis;
