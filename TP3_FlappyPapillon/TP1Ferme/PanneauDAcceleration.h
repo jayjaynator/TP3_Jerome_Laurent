@@ -7,7 +7,6 @@ public:
 	PanneauDAcceleration();
 	~PanneauDAcceleration();
 
-	//virtual void Update(long Millis) override;
 
 	virtual double GetLargeur() override;
 	virtual double GetHauteur() override;

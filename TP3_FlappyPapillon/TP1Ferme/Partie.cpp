@@ -38,19 +38,16 @@ void Partie::Update(long Millis)
     Joueur.Update(Millis);
 
     // Mise à jour des obstacles
-    //for(auto& Obstacle : obstacles)
-    //{
-    //    Obstacle.Update(Millis);
-    //}
-    
-    
-    
-    test.Update(Millis);
-    std::cout << test.GetX() << "  " << test.GetY() << std::endl;
-
+    for(auto& obstacle : obstacles)
+    {
+        obstacle->Update(Millis);
+    }
 
     BG1.Update(Millis);
     BG2.Update(Millis);
+
+    AjouterObstacle(Millis);
+
 
     VerifierPartieFinie();
 }
@@ -59,24 +56,42 @@ void Partie::Render(SDL_Renderer* Renderer) const
 {
     //render BG1
     Render::DrawSprite(Renderer, Sprite::Background, BG1.GetPositionX(), 0);
-    
+
     //render BG2
     Render::DrawSprite(Renderer, Sprite::Background, BG2.GetPositionX(), 0);
 
-    //render obstacle test
-    Render::DrawSprite(Renderer, Sprite::ToileDAraignee, test.GetX(), test.GetY());
-    
-   /* 
-    SDL_SetRenderDrawColor(Renderer, Rouge, Vert, Bleu, 255);
-    SDL_RenderClear(Renderer);
-  */
 
-    // TODO: Dessin des obstacles 
-    // for(auto& Obstacle : obstacles)
-    //          switch type dobstacle
-    //        Render::DrawSprite(Renderer, Sprite::Oeuf, O.GetPositionX(), O.GetPositionY());
-   
-    
+    for (auto& obstacle : obstacles)
+    {
+
+        switch (obstacle->GetType())
+        {
+        case 1:
+            Render::DrawSprite(Renderer, Sprite::BonusDeVie, obstacle->GetX(), obstacle->GetY());
+            break;
+
+        case 2:
+            Render::DrawSprite(Renderer, Sprite::FileAInsecte, obstacle->GetX(), obstacle->GetY());
+            break;
+
+        case 3:
+            Render::DrawSprite(Renderer, Sprite::PanneauDAcceleration, obstacle->GetX(), obstacle->GetY());
+            break;
+
+        case 4:
+            Render::DrawSprite(Renderer, Sprite::RucheDAbeilles, obstacle->GetX(), obstacle->GetY());
+            break;
+
+        case 5:
+            Render::DrawSprite(Renderer, Sprite::ToileDAraignee, obstacle->GetX(), obstacle->GetY());
+            break;
+
+        default:
+            break;
+        }
+
+    }
+
    
     // Dessin du papillon
     Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
@@ -89,4 +104,47 @@ void Partie::VerifierPartieFinie()
 {
     if (Joueur.GetVies() == 0)
         PartieFinie = true;
+}
+
+void Partie::AjouterObstacle(long Millis)
+{
+    TimerObstacle += 0.2 * Millis;
+
+
+    if (TimerObstacle > 480)
+    {
+        int RandType = (rand() % 4) + 1;
+        switch (RandType)
+        {
+        case 1:
+            obstacles.push_back(new BonusDeVie);
+            break;
+
+        case 2:
+            obstacles.push_back(new FiletAInsectes);
+            break;
+
+        case 3:
+            obstacles.push_back(new PanneauDAcceleration);
+            break;
+
+        case 4:
+            obstacles.push_back(new RucheDAbeilles);
+            break;
+
+        case 5:
+            obstacles.push_back(new ToileDAraignee);
+            break;
+
+        default:
+            break;
+        }
+        TimerObstacle = 0;
+    }
+    
+   
+}
+
+void Partie::SupprimerObstacle()
+{
 }

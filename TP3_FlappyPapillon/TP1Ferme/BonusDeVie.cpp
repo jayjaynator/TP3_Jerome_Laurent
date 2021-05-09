@@ -1,7 +1,7 @@
 #include "BonusDeVie.h"
 
 BonusDeVie::BonusDeVie()
-	:Obstacle{}
+	:Obstacle{1}
 	,VelocityX{ 0 }
 	,Largeur{50}
 	,Hauteur{50}
@@ -10,12 +10,6 @@ BonusDeVie::BonusDeVie()
 BonusDeVie::~BonusDeVie()
 {}
 
-//void BonusDeVie::Update(long Millis)
-//{
-//
-//
-//
-//}
 
 double BonusDeVie::GetLargeur()
 {

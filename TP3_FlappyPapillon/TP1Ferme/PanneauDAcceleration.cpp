@@ -1,7 +1,7 @@
 #include "PanneauDAcceleration.h"
 
 PanneauDAcceleration::PanneauDAcceleration()
-	:Obstacle{}
+	:Obstacle{3}
 	,VelocityX{ 0 }
 	,Largeur{120}
 	,Hauteur{109}
@@ -10,10 +10,7 @@ PanneauDAcceleration::PanneauDAcceleration()
 PanneauDAcceleration::~PanneauDAcceleration()
 {}
 
-//void PanneauDAcceleration::Update(long Millis)
-//{
-//
-//}
+
 
 double PanneauDAcceleration::GetLargeur()
 {

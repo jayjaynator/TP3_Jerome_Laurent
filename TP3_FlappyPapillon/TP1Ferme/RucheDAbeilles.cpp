@@ -1,7 +1,7 @@
 #include "RucheDAbeilles.h"
 
 RucheDAbeilles::RucheDAbeilles()
-	:Obstacle{}
+	:Obstacle{4}
 	,VelocityX{0}
 	,Largeur{90}
 	,Hauteur{95}

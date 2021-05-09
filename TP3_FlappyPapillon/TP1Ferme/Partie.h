@@ -10,7 +10,8 @@
 #include "Constants.h"
 
 #include "ToileDAraignee.h"
-
+#include <vector>
+#include<iostream>
 
 class Partie
 {
@@ -22,15 +23,21 @@ public:
 
     void VerifierPartieFinie();
 
+    void AjouterObstacle(long Millis);
+
+    void SupprimerObstacle();
+
 private:
     bool PartieFinie;
 
     Papillon Joueur;
-    //std::array<Obstacle, 5> obstacles;
+    std::vector <Obstacle*> obstacles;
     
+    double TimerObstacle = 0;
+
     ToileDAraignee test;
 
-    //background peut etre
+    //background 
     Background BG1 = Background(0); Background BG2 = Background(SCREEN_WIDTH);
 	
 
