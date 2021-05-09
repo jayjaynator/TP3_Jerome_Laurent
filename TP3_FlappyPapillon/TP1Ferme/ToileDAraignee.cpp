@@ -10,11 +10,11 @@ ToileDAraignee::ToileDAraignee()
 ToileDAraignee::~ToileDAraignee()
 {}
 
-void ToileDAraignee::Update(long Millis)
-{
-
-
-}
+//void ToileDAraignee::Update(long Millis)
+//{
+//
+//
+//}
 
 double ToileDAraignee::GetLargeur()
 {

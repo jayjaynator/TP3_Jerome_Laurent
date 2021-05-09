@@ -42,6 +42,11 @@ void Partie::Update(long Millis)
     //{
     //    Obstacle.Update(Millis);
     //}
+    
+    
+    
+    test.Update(Millis);
+    std::cout << test.GetX() << "  " << test.GetY() << std::endl;
 
 
     BG1.Update(Millis);
@@ -52,14 +57,14 @@ void Partie::Update(long Millis)
 
 void Partie::Render(SDL_Renderer* Renderer) const
 {
-	
-	
     //render BG1
     Render::DrawSprite(Renderer, Sprite::Background, BG1.GetPositionX(), 0);
     
     //render BG2
     Render::DrawSprite(Renderer, Sprite::Background, BG2.GetPositionX(), 0);
 
+    //render obstacle test
+    Render::DrawSprite(Renderer, Sprite::ToileDAraignee, test.GetX(), test.GetY());
     
    /* 
     SDL_SetRenderDrawColor(Renderer, Rouge, Vert, Bleu, 255);

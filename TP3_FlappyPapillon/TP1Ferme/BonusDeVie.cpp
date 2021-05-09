@@ -10,12 +10,12 @@ BonusDeVie::BonusDeVie()
 BonusDeVie::~BonusDeVie()
 {}
 
-void BonusDeVie::Update(long Millis)
-{
-
-
-
-}
+//void BonusDeVie::Update(long Millis)
+//{
+//
+//
+//
+//}
 
 double BonusDeVie::GetLargeur()
 {

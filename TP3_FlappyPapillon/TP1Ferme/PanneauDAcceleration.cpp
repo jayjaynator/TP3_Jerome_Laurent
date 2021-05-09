@@ -10,10 +10,10 @@ PanneauDAcceleration::PanneauDAcceleration()
 PanneauDAcceleration::~PanneauDAcceleration()
 {}
 
-void PanneauDAcceleration::Update(long Millis)
-{
-
-}
+//void PanneauDAcceleration::Update(long Millis)
+//{
+//
+//}
 
 double PanneauDAcceleration::GetLargeur()
 {

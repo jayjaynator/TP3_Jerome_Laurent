@@ -9,6 +9,8 @@
 #include "Background.h"
 #include "Constants.h"
 
+#include "ToileDAraignee.h"
+
 
 class Partie
 {
@@ -26,7 +28,9 @@ private:
     Papillon Joueur;
     //std::array<Obstacle, 5> obstacles;
     
-//background peut etre
+    ToileDAraignee test;
+
+    //background peut etre
     Background BG1 = Background(0); Background BG2 = Background(SCREEN_WIDTH);
 	
 

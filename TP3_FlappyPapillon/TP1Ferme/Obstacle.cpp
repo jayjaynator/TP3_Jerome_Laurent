@@ -14,11 +14,15 @@ Obstacle::~Obstacle()
 
 void Obstacle::Update(long Millis)
 {
+	//if (PositionX == (-Largeur))
+	//	destroy obstacle
 
+	PositionX -= 0.2 * Millis;
 }
 
 double Obstacle::PosYRand()
 {
-	return 0.0;
+	PositionY = rand() % SCREEN_HEIGHT;
+	return PositionY;
 }
 
