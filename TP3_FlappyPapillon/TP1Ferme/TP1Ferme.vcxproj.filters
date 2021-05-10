@@ -87,6 +87,9 @@
     <ClInclude Include="BonusDeVie.h">
       <Filter>Fichiers d%27en-tête\TP3\1_Obstacles</Filter>
     </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Fichiers d%27en-tête\TP3</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Gnome.cpp">
@@ -136,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="BonusDeVie.cpp">
       <Filter>Fichiers sources\TP3\1_Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Fichiers sources\TP3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

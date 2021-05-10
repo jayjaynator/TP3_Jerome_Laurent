@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
     <ClInclude Include="BonusDeVie.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="FiletAInsectes.h" />
@@ -168,6 +169,7 @@
     <ClInclude Include="ToileDAraignee.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="BonusDeVie.cpp" />
     <ClCompile Include="FiletAInsectes.cpp" />
     <ClCompile Include="Game.cpp" />
