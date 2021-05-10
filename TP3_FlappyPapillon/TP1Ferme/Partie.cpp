@@ -123,6 +123,20 @@ void Partie::Update(long Millis)
         ++obstacle;
     }
 
+    if (Accelere == true)
+    {
+        if (TimerAcceleration > 0)
+        {
+            TimerAcceleration = TimerAcceleration - (Millis / 1000.0);
+        }
+
+        if (TimerAcceleration <= 0)
+        {
+            Accelere = false;
+            TimerAcceleration = 5;
+        }
+    }
+
     TimerFlashPapillon += Millis;
     std::cout << TimerFlashPapillon << std::endl;
     if (TimerFlashPapillon > 500)

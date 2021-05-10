@@ -40,6 +40,7 @@ private:
     
     double TimerObstacle = 0;
     double TimerFlashPapillon = 0;
+    double TimerAcceleration = 5;
     bool Accelere = false;
 
     Background BG1 = Background(0);
