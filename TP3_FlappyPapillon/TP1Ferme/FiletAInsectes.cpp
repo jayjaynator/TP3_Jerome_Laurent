@@ -14,11 +14,11 @@ FiletAInsectes::~FiletAInsectes()
 
 void FiletAInsectes::Update(long Millis, bool Acceleration)
 {
-	PositionX -= 0.2 * Millis;
 
+	PositionX -= 0.120 * Millis;
 	if (Acceleration)
 	{
-		PositionX -= 0.2 * Millis;
+		PositionX -= (0.120 + 0.030) * Millis;
 	}
 	
 	TeleportTimer += Millis;
