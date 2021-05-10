@@ -31,6 +31,7 @@ void Papillon::Update(long Millis)
 
 
     PositionY += VelocityY * NbSecondes;
+
     //cout << "AccelerationY = " << AccelerationY << ", VelocityY = " << VelocityY << endl;
 
 
@@ -130,7 +131,6 @@ bool Papillon::DetectionCollision(Obstacle* obstacle)
             Bas < HautAutre ||
             BasAutre < Haut
         );
-
 
 
 

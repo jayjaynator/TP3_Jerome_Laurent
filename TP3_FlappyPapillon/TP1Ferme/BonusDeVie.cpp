@@ -1,22 +1,14 @@
 #include "BonusDeVie.h"
 
 BonusDeVie::BonusDeVie()
-	:Obstacle{1}
+	:Obstacle{1, PosYRand()}
 	,VelocityX{ 0 }
-	,Largeur{50}
-	,Hauteur{50}
 {}
 
 BonusDeVie::~BonusDeVie()
 {}
 
-
-double BonusDeVie::GetLargeur()
+void BonusDeVie::Update(long Millis)
 {
-	return Largeur;
-}
 
-double BonusDeVie::GetHauteur()
-{
-	return Hauteur;
 }

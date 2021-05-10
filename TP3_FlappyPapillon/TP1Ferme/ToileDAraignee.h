@@ -7,11 +7,7 @@ public:
 	ToileDAraignee();
 	~ToileDAraignee();
 
-	virtual double GetLargeur() override;
-	virtual double GetHauteur() override;
-
 protected:
-	double Largeur, Hauteur;
 	double VelocityX;
 
 };
