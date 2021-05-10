@@ -14,5 +14,6 @@ public:
 
 protected:
 	double Largeur, Hauteur;
+	double TeleportTimer;
 
 };
