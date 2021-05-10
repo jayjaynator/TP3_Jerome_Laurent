@@ -45,6 +45,12 @@ void Papillon::Update(long Millis, bool Acceleration)
 
     if (Invulnerable)
     {
+        if (NbSecInv > 0)
+        {
+            NbSecInv = NbSecInv - NbSecondes;
+            cout << "Papillon est invulnerable" << endl;
+        }
+
         if (NbSecInv <= 0)
         {
             Invulnerable = false;
@@ -52,11 +58,6 @@ void Papillon::Update(long Millis, bool Acceleration)
             cout << "Papillon n'est plus invulnerable" << endl;
         }
 
-        if (NbSecInv > 0)
-        {
-            NbSecInv = -NbSecondes;
-            cout << "Papillon est invulnerable" << endl;
-        }
     }
 
 }
