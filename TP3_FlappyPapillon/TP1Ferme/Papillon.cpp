@@ -85,9 +85,13 @@ void Papillon::Rebondir()
     if (SortieBas())
         VelocityY = -300;
 }
+void Papillon::GagnerUneVie()
+{
+    Vies ++;
+}
 void Papillon::PerdreUneVie()
 {
-    Vies = Vies - 1;
+    Vies --;
 }
 
 bool Papillon::VelocityPlusGrandA299()

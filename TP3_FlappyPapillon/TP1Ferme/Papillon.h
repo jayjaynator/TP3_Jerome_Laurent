@@ -16,6 +16,7 @@ public:
 	void GraviteAffecteVelocite();
 	void Sauter();
 	void Rebondir();
+	void GagnerUneVie();
 	void PerdreUneVie();
 
 	bool VelocityPlusGrandA299();

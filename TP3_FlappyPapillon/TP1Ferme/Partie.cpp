@@ -38,8 +38,9 @@ void Partie::Update(long Millis)
     // Si la partie n'est pas encore terminée, on fait avancer l'état
     // du jeu
     if (PartieFinie)
+    {
         return;
-    
+    }
 
     Joueur.Update(Millis);
 
@@ -47,6 +48,38 @@ void Partie::Update(long Millis)
     for(auto& obstacle : obstacles)
     {
         obstacle->Update(Millis);
+    }
+
+    for (auto& obstacle : obstacles)
+    {
+        if (Joueur.DetectionCollision(obstacle))
+        {
+            int Type = obstacle->GetType();
+
+            {
+                switch (Type)
+                {
+                case 1:
+                    Joueur.GagnerUneVie();
+                    break;
+                case 2:
+                    Joueur.PerdreUneVie();
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                default:
+
+                    break;
+                }
+            }
+        }
     }
 
     std::cout << (rand() % 5) + 1;
@@ -109,8 +142,10 @@ void Partie::Render(SDL_Renderer* Renderer) const
     // Dessin du papillon
     Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
 
-     if(PartieFinie)
-        Render::DrawSprite(Renderer, Sprite::GameOver, SCREEN_WIDTH/2 - 300/2, SCREEN_HEIGHT/2 - 120/2);
+    if (PartieFinie)
+    {
+        Render::DrawSprite(Renderer, Sprite::GameOver, SCREEN_WIDTH / 2 - 300 / 2, SCREEN_HEIGHT / 2 - 120 / 2);
+    }
 }
 
 void Partie::VerifierPartieFinie()
