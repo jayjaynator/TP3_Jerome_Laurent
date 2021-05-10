@@ -137,9 +137,11 @@ void Partie::Update(long Millis)
         AjouterObstacle();
 
 
+   
+
+
+
     SupressionObstacle();
-
-
 
     VerifierPartieFinie();
 }
@@ -151,6 +153,22 @@ void Partie::Render(SDL_Renderer* Renderer) const
 
     //render BG2
     Render::DrawSprite(Renderer, Sprite::Background, BG2.GetPositionX(), 0);
+
+    if (Input::PressedKeys[Input::D])
+    {
+        SDL_SetRenderDrawColor(Renderer, 255, 255, 0, 255);
+        
+        // Dessin du joueur
+        SDL_Rect Rect{ Joueur.GetX(), Joueur.GetY(),Joueur.GetLargeur(), Joueur.GetHauteur() };
+        SDL_RenderFillRect(Renderer, &Rect);
+
+        for (auto& obstacle : obstacles)
+        {
+              // Dessin des obstacles
+            SDL_Rect Rect{ obstacle->GetX(), obstacle->GetY(),obstacle->GetLargeur(), obstacle->GetHauteur() };
+            SDL_RenderFillRect(Renderer, &Rect);
+        }
+    }
 
 
     for (auto& obstacle : obstacles)

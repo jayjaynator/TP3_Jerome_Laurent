@@ -85,17 +85,14 @@ void Game::HandleInput(const SDL_Event& Event)
     // Si on relâche une touche
     case SDL_KEYUP:
         switch(Event.key.keysym.sym) {
-        case SDLK_LEFT:
-            Input::PressedKeys[Input::Left] = false;
+        case SDLK_d:
+            Input::PressedKeys[Input::D] = false;
             break;
-        case SDLK_RIGHT:
-            Input::PressedKeys[Input::Right] = false;
+        case SDLK_r:
+            Input::PressedKeys[Input::R] = false;
             break;
-        case SDLK_DOWN:
-            Input::PressedKeys[Input::Down] = false;
-            break;
-        case SDLK_UP:
-            Input::PressedKeys[Input::Up] = false;
+        case SDLK_l:
+            Input::PressedKeys[Input::L] = false;
             break;
         case SDLK_SPACE:
             Input::PressedKeys[Input::Space] = false;
@@ -106,17 +103,14 @@ void Game::HandleInput(const SDL_Event& Event)
     // Si on presse une touche
     case SDL_KEYDOWN:
         switch(Event.key.keysym.sym) {
-        case SDLK_LEFT:
-            Input::PressedKeys[Input::Left] = true;
+        case SDLK_d:
+            Input::PressedKeys[Input::D] = true;
             break;
-        case SDLK_RIGHT:
-            Input::PressedKeys[Input::Right] = true;
+        case SDLK_r:
+            Input::PressedKeys[Input::R] = true;
             break;
-        case SDLK_DOWN:
-            Input::PressedKeys[Input::Down] = true;
-            break;
-        case SDLK_UP:
-            Input::PressedKeys[Input::Up] = true;
+        case SDLK_l:
+            Input::PressedKeys[Input::L] = true;
             break;
         case SDLK_SPACE:
             Input::PressedKeys[Input::Space] = true;

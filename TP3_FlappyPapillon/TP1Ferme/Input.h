@@ -5,10 +5,9 @@
 namespace Input
 {
     const int Space = 0;
-    const int Up = 1;
-    const int Down = 2;
-    const int Left = 3;
-    const int Right = 4;
+    const int D = 1;
+    const int R = 2;
+    const int L = 3;
 
-    extern std::array<bool, 5> PressedKeys;
+    extern std::array<bool, 4> PressedKeys;
 }

@@ -18,25 +18,7 @@ Gnome::Gnome()
 
 void Gnome::Update(long Millis)
 {
-    if(Input::PressedKeys[Input::Right])
-    {
-        PositionX += 0.2 * Millis;
-        GoesLeft = false;
-    }
-    else if(Input::PressedKeys[Input::Left])
-    {
-        PositionX -= 0.2 * Millis;
-        GoesLeft = true;
-    }
-
-    if(Input::PressedKeys[Input::Up])
-    {
-        PositionY -= 0.2 * Millis;
-    }
-    else if(Input::PressedKeys[Input::Down])
-    {
-        PositionY += 0.2 * Millis;
-    }
+   
 
     // TODO : Empêcher le Gnome de sortir de l'écran
 }
