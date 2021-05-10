@@ -11,7 +11,9 @@ Obstacle::Obstacle(int Type, double PositionDepartY)
 {}
 
 Obstacle::~Obstacle()
-{}
+{
+	
+}
 
 void Obstacle::Update(long Millis, bool Acceleration)
 {

@@ -50,6 +50,7 @@ void Partie::Update(long Millis)
         obstacle->Update(Millis, Accelere);
     }
 
+
     for (auto& obstacle : obstacles)
     {
         if (Joueur.DetectionCollision(obstacle))
@@ -63,6 +64,9 @@ void Partie::Update(long Millis)
                     std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
                     Joueur.GagnerUneVie();
                     std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
+
+
+
                     break;
 
                 case 2: // FiletAInsectes
@@ -120,7 +124,7 @@ void Partie::Update(long Millis)
         AjouterObstacle();
 
 
-    //SupressionObstacleQuiSort();
+    //SupressionObstacle();
 
 
     VerifierPartieFinie();
@@ -224,21 +228,19 @@ bool Partie::DoitAjouterObstacle()
 
 void Partie::SupressionObstacle()
 {
-    //for (int i = 0; i < obstacles.size(); i++)
-    //{
-    //    if (obstacles[0]->GetX() <= -obstacles[i]->GetLargeur())
-    //    {
-    //        Obstacle* it = obstacles.at(i);
-    //        delete(it);
-    //        it = NULL;
-    //    }
-    //}
+    std::vector<Obstacle*>::iterator obstacle;
 
-    if (obstacles[0]->GetX() <= -obstacles[0]->GetLargeur())
+    for (obstacle = obstacles.begin(); obstacle != obstacles.end(); )
     {
-        Obstacle* it = obstacles.at(0);
-        delete obstacles.at(0);
-        obstacles.erase(obstacles.begin());
+        if ((*obstacle)->GetX() > (*obstacle)->GetLargeur())
+        {
+            delete* obstacle;
+            obstacle = obstacles.erase(obstacle);
+        }
+        else
+        {
+            ++obstacle;
+        }
     }
 
 }
