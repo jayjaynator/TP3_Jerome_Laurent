@@ -27,6 +27,12 @@
 Partie::Partie()
     : PartieFinie(false) {}
 
+Partie::~Partie()
+{
+    for (auto& obstacle : obstacles)
+        delete obstacle;
+}
+
 void Partie::Update(long Millis)
 {
     // Si la partie n'est pas encore terminée, on fait avancer l'état
@@ -46,7 +52,12 @@ void Partie::Update(long Millis)
     BG1.Update(Millis);
     BG2.Update(Millis);
 
-    AjouterObstacle(Millis);
+    TimerObstacle += 0.2 * Millis;
+    if (DoitAjouterObstacle())
+        AjouterObstacle();
+
+
+    //SupressionObstacleQuiSort();
 
 
     VerifierPartieFinie();
@@ -106,45 +117,56 @@ void Partie::VerifierPartieFinie()
         PartieFinie = true;
 }
 
-void Partie::AjouterObstacle(long Millis)
+void Partie::AjouterObstacle()
 {
-    TimerObstacle += 0.2 * Millis;
-
-
-    if (TimerObstacle > 480)
+    int RandType = (rand() % 4) + 1;
+    switch (RandType)
     {
-        int RandType = (rand() % 4) + 1;
-        switch (RandType)
-        {
-        case 1:
-            obstacles.push_back(new BonusDeVie);
-            break;
+    case 1:
+        obstacles.push_back(new BonusDeVie);
+        break;
 
-        case 2:
-            obstacles.push_back(new FiletAInsectes);
-            break;
+    case 2:
+        obstacles.push_back(new FiletAInsectes);
+        break;
 
-        case 3:
-            obstacles.push_back(new PanneauDAcceleration);
-            break;
+    case 3:
+        obstacles.push_back(new PanneauDAcceleration);
+        break;
 
-        case 4:
-            obstacles.push_back(new RucheDAbeilles);
-            break;
+    case 4:
+        obstacles.push_back(new RucheDAbeilles);
+        break;
 
-        case 5:
-            obstacles.push_back(new ToileDAraignee);
-            break;
+    case 5:
+        obstacles.push_back(new ToileDAraignee);
+        break;
 
-        default:
-            break;
-        }
-        TimerObstacle = 0;
+    default:
+        break;
     }
-    
-   
+
+    TimerObstacle = 0;
 }
 
-void Partie::SupprimerObstacle()
+bool Partie::DoitAjouterObstacle()
 {
+    if (TimerObstacle > 480)
+        return true;
+    else
+        return false;
+}
+
+void Partie::SupressionObstacleQuiSort()
+{
+    for (int i = 0; i < obstacles.size(); i++)
+    {
+        if (obstacles[i]->GetX() <= -obstacles[i]->GetLargeur())
+        {
+            Obstacle* it = obstacles.at(i);
+            delete(it);
+            it = NULL;
+        }
+    }
+
 }

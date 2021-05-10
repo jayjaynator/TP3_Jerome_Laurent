@@ -17,15 +17,17 @@ class Partie
 {
 public:
     Partie();
+    ~Partie();
 
     void Update(long Millis);
     void Render(SDL_Renderer* Renderer) const;
 
     void VerifierPartieFinie();
 
-    void AjouterObstacle(long Millis);
+    void AjouterObstacle();
+    bool DoitAjouterObstacle();
 
-    void SupprimerObstacle();
+    void SupressionObstacleQuiSort();
 
 private:
     bool PartieFinie;
