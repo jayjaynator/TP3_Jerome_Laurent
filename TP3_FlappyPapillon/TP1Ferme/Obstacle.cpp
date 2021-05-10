@@ -13,12 +13,17 @@ Obstacle::Obstacle(int Type, double PositionDepartY)
 Obstacle::~Obstacle()
 {}
 
-void Obstacle::Update(long Millis)
+void Obstacle::Update(long Millis, bool Acceleration)
 {
 	//if (PositionX == (-Largeur))
 	//	destroy obstacle
 
 	PositionX -= 0.2 * Millis;
+
+	if (Acceleration)
+	{
+		PositionX -= 0.2 * Millis;
+	}
 }
 
 int Obstacle::GetType() const

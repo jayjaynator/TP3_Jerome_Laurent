@@ -6,7 +6,7 @@ public:
 	GameObject(double X, double Y);
 	~GameObject() = default;
 
-	virtual void Update(long Millis);
+	virtual void Update(long Millis, bool Acceleration);
 
 	double GetX() const;
 	double GetY() const;

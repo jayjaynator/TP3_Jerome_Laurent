@@ -16,12 +16,17 @@ Background::~Background()
 {
 }
 
-void Background::Update(long Millis)
+void Background::Update(long Millis, bool Acceleration)
 {
 	if (PositionX < (-SCREEN_WIDTH))
 		PositionX = SCREEN_WIDTH;
 	
 		PositionX -= 0.2 * Millis; // 2
+
+		if (Acceleration)
+		{
+			PositionX -= 0.2 * Millis;
+		}
 }
 
 double Background::GetPositionX() const

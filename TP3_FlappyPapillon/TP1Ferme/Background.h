@@ -8,7 +8,7 @@ public:
 	Background(double PositionDepartX);
 	~Background();
 
-	void Update(long Millis);
+	void Update(long Millis, bool Acceleration);
 	double GetPositionX() const;
 
 	void ActiverAcceleration();

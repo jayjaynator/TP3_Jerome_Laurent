@@ -11,9 +11,14 @@ RucheDAbeilles::~RucheDAbeilles()
 {
 }
 
-void RucheDAbeilles::Update(long Millis)
+void RucheDAbeilles::Update(long Millis, bool Acceleration)
 {
 	PositionX -= 0.2 * Millis;
+
+	if (Acceleration)
+	{
+		PositionX -= 0.2 * Millis;
+	}
 
 	if (IsGoingUp)
 	{

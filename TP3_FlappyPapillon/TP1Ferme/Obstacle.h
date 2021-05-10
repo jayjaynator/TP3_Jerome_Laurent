@@ -8,7 +8,7 @@ public:
 	Obstacle(int Type, double PositionDepartY);
 	~Obstacle();
 
-	virtual void Update(long Millis) override;
+	virtual void Update(long Millis, bool Acceleration) override;
 
 	virtual double GetLargeur() = 0;
 	virtual double GetHauteur() = 0;

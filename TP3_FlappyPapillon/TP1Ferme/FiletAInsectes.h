@@ -7,7 +7,7 @@ public:
 	FiletAInsectes(double PositionDepartY);
 	~FiletAInsectes();
 
-	virtual void Update(long Millis) override;
+	virtual void Update(long Millis, bool Acceleration) override;
 
 	virtual double GetLargeur() override;
 	virtual double GetHauteur() override;

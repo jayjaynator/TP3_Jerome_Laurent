@@ -6,7 +6,7 @@ GameObject::GameObject(double X, double Y)
 	,AccelerationActive{false}
 {}
 
-void GameObject::Update(long Millis)
+void GameObject::Update(long Millis, bool Acceleration)
 {}
 
 double GameObject::GetX() const
