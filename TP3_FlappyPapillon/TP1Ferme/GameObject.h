@@ -13,6 +13,9 @@ public:
 	void SetX(double X);
 	void SetY(double Y);
 
+	void ActiverAcceleration();
+	void DesactiverAcceleration();
+
 protected:
 	double PositionX, PositionY;
 	bool AccelerationActive;

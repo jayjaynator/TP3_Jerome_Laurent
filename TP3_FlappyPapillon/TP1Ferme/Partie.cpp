@@ -59,22 +59,27 @@ void Partie::Update(long Millis)
             {
                 switch (Type)
                 {
-                case 1:
+                case 1: // BonusDeVie
                     Joueur.GagnerUneVie();
                     break;
-                case 2:
+
+                case 2: // FiletAInsectes
                     Joueur.PerdreUneVie();
                     break;
-                case 3:
+
+                case 3: // PanneauDAcceleration
+                    Joueur.ActiverAcceleration();
+                    for (auto& obstacle : obstacles)
+                    {
+                        obstacle->ActiverAcceleration();
+                    }
+                    break;
+
+                case 4: // RuchesDAbeilles
 
                     break;
-                case 4:
 
-                    break;
-                case 5:
-
-                    break;
-                default:
+                case 5: // ToilesDAraignee
 
                     break;
                 }

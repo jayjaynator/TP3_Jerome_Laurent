@@ -20,10 +20,20 @@ void Background::Update(long Millis)
 	if (PositionX < (-SCREEN_WIDTH))
 		PositionX = SCREEN_WIDTH;
 	
-		PositionX -= 0.2 * Millis;
+		PositionX -= 0.2 * Millis; // 2
 }
 
 double Background::GetPositionX() const
 {
 	return PositionX;
+}
+
+void Background::ActiverAcceleration()
+{
+	AccelerationActive = true;
+}
+
+void Background::DesactiverAcceleration()
+{
+	AccelerationActive = false;
 }

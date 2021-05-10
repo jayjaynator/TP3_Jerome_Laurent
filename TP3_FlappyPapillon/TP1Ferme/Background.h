@@ -11,7 +11,11 @@ public:
 	void Update(long Millis);
 	double GetPositionX() const;
 
+	void ActiverAcceleration();
+	void DesactiverAcceleration();
 
 private:
 	double PositionX;
+	bool AccelerationActive;
+
 };

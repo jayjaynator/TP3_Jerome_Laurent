@@ -28,3 +28,13 @@ void GameObject::SetY(double Y)
 {
 	PositionY = Y;
 }
+
+void GameObject::ActiverAcceleration()
+{
+	AccelerationActive = true;
+}
+
+void GameObject::DesactiverAcceleration()
+{
+	AccelerationActive = false;
+}
