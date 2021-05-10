@@ -2,7 +2,9 @@
 #include "Constants.h"
 
 RucheDAbeilles::RucheDAbeilles()
-	:Obstacle{4, PosYRand()}
+	:Obstacle{4, Hauteur}
+	,Largeur{90}
+	,Hauteur{95}
 {}
 
 RucheDAbeilles::~RucheDAbeilles()
@@ -28,4 +30,14 @@ void RucheDAbeilles::Update(long Millis)
 			IsGoingUp = true;
 	}
 
+}
+
+double RucheDAbeilles::GetLargeur()
+{
+	return Largeur;
+}
+
+double RucheDAbeilles::GetHauteur()
+{
+	return Hauteur;
 }

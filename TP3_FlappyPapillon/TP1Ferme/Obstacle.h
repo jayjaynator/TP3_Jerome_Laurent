@@ -1,19 +1,17 @@
 #pragma once
 #include "GameObject.h"
-#include "BonusDeVie.h"
-
 #include <iostream>
 
 class Obstacle : public GameObject
 {
 public:
-	Obstacle(int Type, double posY);
+	Obstacle(int Type);
 	~Obstacle();
 
 	virtual void Update(long Millis) override;
 
-	double GetLargeur();
-	double GetHauteur();
+	virtual double GetLargeur() = 0;
+	virtual double GetHauteur() = 0;
 
 	int GetType() const;
 
@@ -22,8 +20,6 @@ public:
 
 protected:
 	int TypeObstacle;
-	double PositionY;
-	double Hauteur, Largeur;
 	/*
 	1-bonus de vie
 	2-filet a insecte
