@@ -66,7 +66,8 @@ void Partie::Update(long Millis)
                 {
                 case 1: // BonusDeVie
                     std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
-                    Joueur.GagnerUneVie();
+                    if (Joueur.GetVies() < 3)
+                        Joueur.GagnerUneVie();
                     std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
 
                     delete* obstacle;
@@ -181,6 +182,17 @@ void Partie::Render(SDL_Renderer* Renderer) const
    
     // Dessin du papillon
     Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
+
+    // Dessin des coeurs
+    if (Joueur.GetVies() > 0)
+        Render::DrawSprite(Renderer, Sprite::Coeur, 10,10);
+
+    if (Joueur.GetVies() > 1)
+        Render::DrawSprite(Renderer, Sprite::Coeur, 42,10);
+
+    if (Joueur.GetVies() > 2)
+        Render::DrawSprite(Renderer, Sprite::Coeur, 74,10);
+    
 
     if (PartieFinie)
     {
