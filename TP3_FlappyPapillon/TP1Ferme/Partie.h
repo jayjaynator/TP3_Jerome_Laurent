@@ -27,7 +27,8 @@ public:
     void AjouterObstacle();
     bool DoitAjouterObstacle();
 
-    void SupressionObstacleQuiSort();
+    void SupressionObstacle();
+    bool ConditionSupressionObstacle();
 
 private:
     bool PartieFinie;

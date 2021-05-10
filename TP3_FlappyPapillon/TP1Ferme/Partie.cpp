@@ -58,7 +58,8 @@ void Partie::Update(long Millis)
 
 
     //SupressionObstacleQuiSort();
-
+    //if (ConditionSupressionObstacle())
+    SupressionObstacle();
 
     VerifierPartieFinie();
 }
@@ -157,16 +158,31 @@ bool Partie::DoitAjouterObstacle()
         return false;
 }
 
-void Partie::SupressionObstacleQuiSort()
+void Partie::SupressionObstacle()
 {
-    for (int i = 0; i < obstacles.size(); i++)
+    //for (int i = 0; i < obstacles.size(); i++)
+    //{
+    //    if (obstacles[0]->GetX() <= -obstacles[i]->GetLargeur())
+    //    {
+    //        Obstacle* it = obstacles.at(i);
+    //        delete(it);
+    //        it = NULL;
+    //    }
+    //}
+
+    if (obstacles[0]->GetX() <= -obstacles[0]->GetLargeur())
     {
-        if (obstacles[i]->GetX() <= -obstacles[i]->GetLargeur())
-        {
-            Obstacle* it = obstacles.at(i);
-            delete(it);
-            it = NULL;
-        }
+        Obstacle* it = obstacles.at(0);
+        delete obstacles.at(0);
+        obstacles.erase (obstacles.begin());
     }
 
+}
+
+bool Partie::ConditionSupressionObstacle()
+{
+    if (obstacles[0]->GetX() <= -obstacles[0]->GetLargeur())
+        return true;
+    else
+        return false;
 }
