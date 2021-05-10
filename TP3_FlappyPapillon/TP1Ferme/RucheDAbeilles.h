@@ -4,7 +4,7 @@
 class RucheDAbeilles : public Obstacle
 {
 public:
-	RucheDAbeilles();
+	RucheDAbeilles(double PositionDepartY);
 	~RucheDAbeilles();
 
 	virtual void Update(long Millis) override;

@@ -4,7 +4,7 @@
 class PanneauDAcceleration : public Obstacle
 {
 public:
-	PanneauDAcceleration();
+	PanneauDAcceleration(double PositionDepartY);
 	~PanneauDAcceleration();
 
 
@@ -13,6 +13,5 @@ public:
 
 protected:
 	double Largeur, Hauteur;
-	double VelocityX;
 
 };

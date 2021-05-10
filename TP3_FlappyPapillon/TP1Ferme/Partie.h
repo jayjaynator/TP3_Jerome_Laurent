@@ -29,6 +29,8 @@ public:
 
     void SupressionObstacleQuiSort();
 
+    double PosRandY(int Type);
+
 private:
     bool PartieFinie;
 
@@ -37,7 +39,7 @@ private:
     
     double TimerObstacle = 0;
 
-    ToileDAraignee test;
+    
 
     //background 
     Background BG1 = Background(0); Background BG2 = Background(SCREEN_WIDTH);

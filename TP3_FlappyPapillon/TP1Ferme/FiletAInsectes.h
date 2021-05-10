@@ -4,7 +4,7 @@
 class FiletAInsectes : public Obstacle
 {
 public:
-	FiletAInsectes();
+	FiletAInsectes(double PositionDepartY);
 	~FiletAInsectes();
 
 	virtual void Update(long Millis) override;
@@ -14,6 +14,5 @@ public:
 
 protected:
 	double Largeur, Hauteur;
-	double VelocityX;
 
 };

@@ -4,7 +4,7 @@
 class ToileDAraignee : public Obstacle
 {
 public:
-	ToileDAraignee();
+	ToileDAraignee(double PositionDepartY);
 	~ToileDAraignee();
 
 	virtual double GetLargeur() override;
@@ -12,6 +12,6 @@ public:
 
 protected:
 	double Largeur, Hauteur;
-	double VelocityX;
+	
 
 };

@@ -5,8 +5,8 @@
 
 #include "Obstacle.h"
 
-Obstacle::Obstacle(int Type)
-	:GameObject{ SCREEN_WIDTH+1, PosYRand()}
+Obstacle::Obstacle(int Type, double PositionDepartY)
+	:GameObject{ SCREEN_WIDTH+1, PositionDepartY}
 	, TypeObstacle(Type)
 {}
 
@@ -25,12 +25,5 @@ int Obstacle::GetType() const
 {
 	return TypeObstacle;
 }
-
-double Obstacle::PosYRand()
-{
-	PositionY = rand() % SCREEN_HEIGHT; // substract height of sprite
-	return PositionY;
-}
-
 
 

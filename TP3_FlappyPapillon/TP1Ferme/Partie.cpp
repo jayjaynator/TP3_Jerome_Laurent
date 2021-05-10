@@ -49,6 +49,8 @@ void Partie::Update(long Millis)
         obstacle->Update(Millis);
     }
 
+    std::cout << (rand() % 5) + 1;
+
     BG1.Update(Millis);
     BG2.Update(Millis);
 
@@ -119,27 +121,27 @@ void Partie::VerifierPartieFinie()
 
 void Partie::AjouterObstacle()
 {
-    int RandType = (rand() % 4) + 1;
+    int RandType = (rand() % 5) + 1;
     switch (RandType)
     {
     case 1:
-        obstacles.push_back(new BonusDeVie);
+        obstacles.push_back(new BonusDeVie(PosRandY(RandType)));
         break;
 
     case 2:
-        obstacles.push_back(new FiletAInsectes);
+        obstacles.push_back(new FiletAInsectes(PosRandY(RandType)));
         break;
 
     case 3:
-        obstacles.push_back(new PanneauDAcceleration);
+        obstacles.push_back(new PanneauDAcceleration(PosRandY(RandType)));
         break;
 
     case 4:
-        obstacles.push_back(new RucheDAbeilles);
+        obstacles.push_back(new RucheDAbeilles(PosRandY(RandType)));
         break;
 
     case 5:
-        obstacles.push_back(new ToileDAraignee);
+        obstacles.push_back(new ToileDAraignee(PosRandY(RandType)));
         break;
 
     default:
@@ -169,4 +171,34 @@ void Partie::SupressionObstacleQuiSort()
         }
     }
 
+}
+
+double Partie::PosRandY(int Type)
+{
+    switch (Type)
+    {
+    case 1:
+        return rand() % (SCREEN_HEIGHT-50);
+        break;
+
+    case 2:
+        return rand() % (SCREEN_HEIGHT-88);
+        break;
+
+    case 3:
+        return rand() % (SCREEN_HEIGHT-109);
+        break;
+
+    case 4:
+        return rand() % (SCREEN_HEIGHT-95);
+        break;
+
+    case 5:
+        return rand() % (SCREEN_HEIGHT-99);
+        break;
+
+    default:
+        return 0;
+        break;
+    }
 }

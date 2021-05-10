@@ -1,8 +1,8 @@
 #include "BonusDeVie.h"
 
-BonusDeVie::BonusDeVie()
-	:Obstacle{1}
-	,VelocityX{ 0 }
+BonusDeVie::BonusDeVie(double PositionDepartY)
+	:Obstacle{1, PositionDepartY}
+	
 	,Largeur{50}
 	,Hauteur{50}
 {}

@@ -3,7 +3,7 @@
 class BonusDeVie : public Obstacle
 {
 public:
-	BonusDeVie();
+	BonusDeVie(double PositionDepartY);
 	~BonusDeVie();
 
 	virtual double GetLargeur() override;
@@ -11,6 +11,5 @@ public:
 
 protected:
 	double Largeur, Hauteur;
-	double VelocityX;
 
 };
