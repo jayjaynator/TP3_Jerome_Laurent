@@ -60,11 +60,15 @@ void Partie::Update(long Millis)
                 switch (Type)
                 {
                 case 1: // BonusDeVie
+                    std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
                     Joueur.GagnerUneVie();
+                    std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
                     break;
 
                 case 2: // FiletAInsectes
+                    std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
                     Joueur.PerdreUneVie();
+                    std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
                     break;
 
                 case 3: // PanneauDAcceleration
@@ -73,21 +77,27 @@ void Partie::Update(long Millis)
                     {
                         obstacle->ActiverAcceleration();
                     }
+                    BG1.ActiverAcceleration();
+                    BG2.ActiverAcceleration();
                     break;
 
                 case 4: // RuchesDAbeilles
-
+                    std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
+                    Joueur.PerdreUneVie();
+                    std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
                     break;
 
                 case 5: // ToilesDAraignee
-
+                    std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
+                    Joueur.PerdreUneVie();
+                    std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
                     break;
                 }
             }
         }
     }
 
-    std::cout << (rand() % 5) + 1;
+
 
     BG1.Update(Millis);
     BG2.Update(Millis);

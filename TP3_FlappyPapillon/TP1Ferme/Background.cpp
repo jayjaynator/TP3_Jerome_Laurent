@@ -8,6 +8,7 @@ Background::Background()
 
 Background::Background(double PositionDepartX)
 	: PositionX{PositionDepartX}
+	, AccelerationActive{false}
 {
 }
 
