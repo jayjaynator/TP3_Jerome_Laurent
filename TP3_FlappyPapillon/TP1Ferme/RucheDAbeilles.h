@@ -14,6 +14,6 @@ public:
 
 protected:
 	double Largeur, Hauteur;
-	double VelocityX;
+	bool IsGoingUp = true;
 
 };
