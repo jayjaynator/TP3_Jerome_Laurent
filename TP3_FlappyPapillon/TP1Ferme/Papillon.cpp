@@ -19,7 +19,7 @@ Papillon::~Papillon()
 {}
 
 
-void Papillon::Update(long Millis)
+void Papillon::Update(long Millis, bool Acceleration)
 {
 	NbSecondes = Millis / 1000.0;
 
@@ -27,7 +27,7 @@ void Papillon::Update(long Millis)
     if (VelocityPlusGrandA299())
         ;
     else
-        GraviteAffecteVelocite();
+        GraviteAffecteVelocite(Acceleration);
 
 
     PositionY += VelocityY * NbSecondes;
@@ -43,19 +43,21 @@ void Papillon::Update(long Millis)
 
 
 
-    //if (Invulnerable)
-    //{
-    //    if (NbSecInv <= 0)
-    //    {
-    //        Invulnerable = false;
-    //        NbSecInv = 3;
-    //    }
+    if (Invulnerable)
+    {
+        if (NbSecInv <= 0)
+        {
+            Invulnerable = false;
+            NbSecInv = 2;
+            cout << "Papillon n'est plus invulnerable" << endl;
+        }
 
-    //    if (NbSecInv > 0)
-    //    {
-    //        NbSecInv = -NbSecondes;
-    //    }
-    //}
+        if (NbSecInv > 0)
+        {
+            NbSecInv = -NbSecondes;
+            cout << "Papillon est invulnerable" << endl;
+        }
+    }
 
 }
 
@@ -67,9 +69,9 @@ double Papillon::GetHauteur() const
 {
     return Hauteur;
 }
-void Papillon::GraviteAffecteVelocite()
+void Papillon::GraviteAffecteVelocite(bool Acceleration)
 {
-    if (AccelerationActive)
+    if (Acceleration)
         VelocityY += +AccelerationY * NbSecondes + 30;
     else
         VelocityY += +AccelerationY * NbSecondes;
@@ -92,6 +94,16 @@ void Papillon::GagnerUneVie()
 void Papillon::PerdreUneVie()
 {
     Vies --;
+}
+
+bool Papillon::GetInvulnerable() const
+{
+    return Invulnerable;
+}
+
+void Papillon::DevientInvulnerable2Sec()
+{
+    Invulnerable = true;
 }
 
 bool Papillon::VelocityPlusGrandA299()

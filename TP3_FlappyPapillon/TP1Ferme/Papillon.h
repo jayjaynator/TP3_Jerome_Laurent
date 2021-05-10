@@ -8,22 +8,27 @@ public:
 	Papillon();
 	~Papillon();
 
-	virtual void Update(long Millis) override;
+	virtual void Update(long Millis, bool Acceleration) override;
 
 	double GetLargeur() const;
 	double GetHauteur() const;
 
-	void GraviteAffecteVelocite();
+	void GraviteAffecteVelocite(bool Acceleration);
 	void Sauter();
 	void Rebondir();
+
+	int GetVies() const;
 	void GagnerUneVie();
 	void PerdreUneVie();
+
+	bool GetInvulnerable() const;
+	void DevientInvulnerable2Sec();
 
 	bool VelocityPlusGrandA299();
 	bool SortieHaut();
 	bool SortieBas();
 	bool DetectionCollision(Obstacle* obstacle);
-	int GetVies() const;
+
 
 
 protected:
@@ -35,5 +40,6 @@ protected:
 
 private:
 	double NbSecondes=0;
+	double NbSecInv = 2;
 
 };
