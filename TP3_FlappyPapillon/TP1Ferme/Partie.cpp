@@ -51,11 +51,15 @@ void Partie::Update(long Millis)
     }
 
 
-    for (auto& obstacle : obstacles)
+    std::vector<Obstacle*>::iterator obstacle;
+
+    for (obstacle = obstacles.begin(); obstacle != obstacles.end(); )
+
+    //for (auto& obstacle : obstacles)
     {
-        if (Joueur.DetectionCollision(obstacle))
+        if (Joueur.DetectionCollision((*obstacle)))
         {
-            int Type = obstacle->GetType();
+            int Type = (*obstacle)->GetType();
 
             {
                 switch (Type)
@@ -65,7 +69,8 @@ void Partie::Update(long Millis)
                     Joueur.GagnerUneVie();
                     std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
 
-
+                    delete* obstacle;
+                    obstacle = obstacles.erase(obstacle);
 
                     break;
 
@@ -80,13 +85,10 @@ void Partie::Update(long Millis)
                     break;
 
                 case 3: // PanneauDAcceleration
-                    //Joueur.ActiverAcceleration();
-                    //for (auto& obstacle : obstacles)
-                    //{
-                    //    obstacle->ActiverAcceleration();
-                    //}
-                    //BG1.ActiverAcceleration();
-                    //BG2.ActiverAcceleration();
+                  
+                    delete* obstacle;
+                    obstacle = obstacles.erase(obstacle);
+
                     Accelere = true;
                     break;
 
@@ -112,6 +114,12 @@ void Partie::Update(long Millis)
                 }
             }
         }
+
+        if (obstacle >= obstacles.end())
+            break;
+
+        
+        ++obstacle;
     }
 
 
