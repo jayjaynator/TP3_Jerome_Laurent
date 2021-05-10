@@ -39,6 +39,7 @@ private:
     std::vector <Obstacle*> obstacles;
     
     double TimerObstacle = 0;
+    double TimerFlashPapillon = 0;
     bool Accelere = false;
 
     Background BG1 = Background(0);

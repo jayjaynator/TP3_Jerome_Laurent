@@ -123,7 +123,11 @@ void Partie::Update(long Millis)
         ++obstacle;
     }
 
-
+    TimerFlashPapillon += Millis;
+    std::cout << TimerFlashPapillon << std::endl;
+    if (TimerFlashPapillon > 500)
+        TimerFlashPapillon = 0;
+    
 
     BG1.Update(Millis, Accelere);
     BG2.Update(Millis, Accelere);
@@ -133,7 +137,8 @@ void Partie::Update(long Millis)
         AjouterObstacle();
 
 
-    //SupressionObstacle();
+    SupressionObstacle();
+
 
 
     VerifierPartieFinie();
@@ -181,7 +186,21 @@ void Partie::Render(SDL_Renderer* Renderer) const
 
    
     // Dessin du papillon
-    Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
+
+    if (Joueur.GetInvulnerable())
+    {
+       
+        if (TimerFlashPapillon < 250)
+        {
+            Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
+            
+
+        }
+    }
+    else
+        Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
+    
+
 
     // Dessin des coeurs
     if (Joueur.GetVies() > 0)
@@ -193,6 +212,8 @@ void Partie::Render(SDL_Renderer* Renderer) const
     if (Joueur.GetVies() > 2)
         Render::DrawSprite(Renderer, Sprite::Coeur, 74,10);
     
+
+
 
     if (PartieFinie)
     {
@@ -252,7 +273,7 @@ void Partie::SupressionObstacle()
 
     for (obstacle = obstacles.begin(); obstacle != obstacles.end(); )
     {
-        if ((*obstacle)->GetX() > (*obstacle)->GetLargeur())
+        if ((*obstacle)->GetX() < -((*obstacle)->GetLargeur()))
         {
             delete* obstacle;
             obstacle = obstacles.erase(obstacle);
