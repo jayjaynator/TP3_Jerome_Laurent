@@ -39,11 +39,9 @@ private:
     std::vector <Obstacle*> obstacles;
     
     double TimerObstacle = 0;
+    bool Accelere = false;
 
-    
-
-    //background 
-    Background BG1 = Background(0); Background BG2 = Background(SCREEN_WIDTH);
+    Background BG1 = Background(0);
+    Background BG2 = Background(SCREEN_WIDTH);
 	
-
 };

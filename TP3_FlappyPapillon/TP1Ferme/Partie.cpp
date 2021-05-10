@@ -42,12 +42,12 @@ void Partie::Update(long Millis)
         return;
     }
 
-    Joueur.Update(Millis);
+    Joueur.Update(Millis, Accelere);
 
     // Mise à jour des obstacles
     for(auto& obstacle : obstacles)
     {
-        obstacle->Update(Millis);
+        obstacle->Update(Millis, Accelere);
     }
 
     for (auto& obstacle : obstacles)
@@ -66,31 +66,44 @@ void Partie::Update(long Millis)
                     break;
 
                 case 2: // FiletAInsectes
-                    std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
-                    Joueur.PerdreUneVie();
-                    std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
+                    if (Joueur.GetInvulnerable() == false)
+                    {
+                        std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
+                        Joueur.PerdreUneVie();
+                        std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
+                        Joueur.DevientInvulnerable2Sec();
+                    }
                     break;
 
                 case 3: // PanneauDAcceleration
-                    Joueur.ActiverAcceleration();
-                    for (auto& obstacle : obstacles)
-                    {
-                        obstacle->ActiverAcceleration();
-                    }
-                    BG1.ActiverAcceleration();
-                    BG2.ActiverAcceleration();
+                    //Joueur.ActiverAcceleration();
+                    //for (auto& obstacle : obstacles)
+                    //{
+                    //    obstacle->ActiverAcceleration();
+                    //}
+                    //BG1.ActiverAcceleration();
+                    //BG2.ActiverAcceleration();
+                    Accelere = true;
                     break;
 
                 case 4: // RuchesDAbeilles
-                    std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
-                    Joueur.PerdreUneVie();
-                    std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
+                    if (Joueur.GetInvulnerable() == false)
+                    {
+                        std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
+                        Joueur.PerdreUneVie();
+                        std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
+                        Joueur.DevientInvulnerable2Sec();
+                    }
                     break;
 
                 case 5: // ToilesDAraignee
-                    std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
-                    Joueur.PerdreUneVie();
-                    std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
+                    if (Joueur.GetInvulnerable() == false)
+                    {
+                        std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
+                        Joueur.PerdreUneVie();
+                        std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
+                        Joueur.DevientInvulnerable2Sec();
+                    }
                     break;
                 }
             }
@@ -99,8 +112,8 @@ void Partie::Update(long Millis)
 
 
 
-    BG1.Update(Millis);
-    BG2.Update(Millis);
+    BG1.Update(Millis, Accelere);
+    BG2.Update(Millis, Accelere);
 
     TimerObstacle += 0.2 * Millis;
     if (DoitAjouterObstacle())
