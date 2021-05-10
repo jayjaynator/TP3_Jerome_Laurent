@@ -51,21 +51,27 @@ void Partie::Update(long Millis)
     }
 
 
-    for (auto& obstacle : obstacles)
+    std::vector<Obstacle*>::iterator obstacle;
+
+    for (obstacle = obstacles.begin(); obstacle != obstacles.end(); )
+
+    //for (auto& obstacle : obstacles)
     {
-        if (Joueur.DetectionCollision(obstacle))
+        if (Joueur.DetectionCollision((*obstacle)))
         {
-            int Type = obstacle->GetType();
+            int Type = (*obstacle)->GetType();
 
             {
                 switch (Type)
                 {
                 case 1: // BonusDeVie
                     std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
-                    Joueur.GagnerUneVie();
+                    if (Joueur.GetVies() < 3)
+                        Joueur.GagnerUneVie();
                     std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
 
-
+                    delete* obstacle;
+                    obstacle = obstacles.erase(obstacle);
 
                     break;
 
@@ -80,13 +86,10 @@ void Partie::Update(long Millis)
                     break;
 
                 case 3: // PanneauDAcceleration
-                    //Joueur.ActiverAcceleration();
-                    //for (auto& obstacle : obstacles)
-                    //{
-                    //    obstacle->ActiverAcceleration();
-                    //}
-                    //BG1.ActiverAcceleration();
-                    //BG2.ActiverAcceleration();
+                  
+                    delete* obstacle;
+                    obstacle = obstacles.erase(obstacle);
+
                     Accelere = true;
                     break;
 
@@ -112,6 +115,12 @@ void Partie::Update(long Millis)
                 }
             }
         }
+
+        if (obstacle >= obstacles.end())
+            break;
+
+        
+        ++obstacle;
     }
 
 
@@ -173,6 +182,17 @@ void Partie::Render(SDL_Renderer* Renderer) const
    
     // Dessin du papillon
     Render::DrawSprite(Renderer, Sprite::Papillon, Joueur.GetX(), Joueur.GetY());
+
+    // Dessin des coeurs
+    if (Joueur.GetVies() > 0)
+        Render::DrawSprite(Renderer, Sprite::Coeur, 10,10);
+
+    if (Joueur.GetVies() > 1)
+        Render::DrawSprite(Renderer, Sprite::Coeur, 42,10);
+
+    if (Joueur.GetVies() > 2)
+        Render::DrawSprite(Renderer, Sprite::Coeur, 74,10);
+    
 
     if (PartieFinie)
     {
