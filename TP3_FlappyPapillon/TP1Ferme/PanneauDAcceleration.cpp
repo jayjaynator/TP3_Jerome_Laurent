@@ -1,8 +1,8 @@
 #include "PanneauDAcceleration.h"
 
-PanneauDAcceleration::PanneauDAcceleration()
-	:Obstacle{3}
-	,VelocityX{ 0 }
+PanneauDAcceleration::PanneauDAcceleration(double PositionDepartY)
+	:Obstacle{3,PositionDepartY }
+	
 	,Largeur{120}
 	,Hauteur{109}
 {}

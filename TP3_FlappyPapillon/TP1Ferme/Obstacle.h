@@ -5,7 +5,7 @@
 class Obstacle : public GameObject
 {
 public:
-	Obstacle(int Type);
+	Obstacle(int Type, double PositionDepartY);
 	~Obstacle();
 
 	virtual void Update(long Millis) override;
@@ -15,7 +15,7 @@ public:
 
 	int GetType() const;
 
-	double PosYRand();
+	
 	
 
 protected:

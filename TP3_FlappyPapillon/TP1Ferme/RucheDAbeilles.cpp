@@ -1,8 +1,8 @@
 #include "RucheDAbeilles.h"
 #include "Constants.h"
 
-RucheDAbeilles::RucheDAbeilles()
-	:Obstacle{4}
+RucheDAbeilles::RucheDAbeilles(double PositionDepartY)
+	:Obstacle{4, PositionDepartY }
 	,Largeur{90}
 	,Hauteur{95}
 {}

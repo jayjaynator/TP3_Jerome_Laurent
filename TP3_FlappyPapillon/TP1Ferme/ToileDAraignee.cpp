@@ -1,8 +1,8 @@
 #include "ToileDAraignee.h"
 
-ToileDAraignee::ToileDAraignee()
-	:Obstacle{5}
-	,VelocityX{0}
+ToileDAraignee::ToileDAraignee(double PositionDepartY)
+	:Obstacle{5, PositionDepartY }
+
 	,Largeur{99}
 	,Hauteur{99}
 {}
