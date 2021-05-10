@@ -2,7 +2,7 @@
 #include "Constants.h"
 
 RucheDAbeilles::RucheDAbeilles()
-	:Obstacle{4, Hauteur}
+	:Obstacle{4}
 	,Largeur{90}
 	,Hauteur{95}
 {}
