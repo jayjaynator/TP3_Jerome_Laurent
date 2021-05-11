@@ -32,6 +32,9 @@ public:
 
     double PosRandY(int Type);
 
+
+    void Acceleration();
+
 private:
     bool PartieFinie;
 
@@ -40,7 +43,6 @@ private:
     
     double TimerObstacle = 0;
     double TimerFlashPapillon = 0;
-    bool Accelere = false;
 
     Background BG1 = Background(0);
     Background BG2 = Background(SCREEN_WIDTH);

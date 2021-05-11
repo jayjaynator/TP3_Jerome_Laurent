@@ -8,14 +8,13 @@ public:
 	Background(double PositionDepartX);
 	~Background();
 
-	void Update(long Millis, bool Acceleration);
+	void Update(long Millis);
 	double GetPositionX() const;
 
-	void ActiverAcceleration();
-	void DesactiverAcceleration();
+	
 
 private:
 	double PositionX;
-	bool AccelerationActive;
+	
 
 };

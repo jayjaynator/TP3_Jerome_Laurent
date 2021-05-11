@@ -8,12 +8,12 @@ public:
 	Papillon();
 	~Papillon();
 
-	virtual void Update(long Millis, bool Acceleration) override;
+	virtual void Update(long Millis) override;
 
 	double GetLargeur() const;
 	double GetHauteur() const;
 
-	void GraviteAffecteVelocite(bool Acceleration);
+	void GraviteAffecteVelocite();
 	void Sauter();
 	void Rebondir();
 
@@ -28,6 +28,8 @@ public:
 	bool SortieHaut();
 	bool SortieBas();
 	bool DetectionCollision(Obstacle* obstacle);
+
+	void Acceleration();
 
 
 

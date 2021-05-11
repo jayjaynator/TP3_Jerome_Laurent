@@ -12,14 +12,10 @@ FiletAInsectes::FiletAInsectes(double PositionDepartY)
 FiletAInsectes::~FiletAInsectes()
 {}
 
-void FiletAInsectes::Update(long Millis, bool Acceleration)
+void FiletAInsectes::Update(long Millis)
 {
 
-	PositionX -= 0.120 * Millis;
-	if (Acceleration)
-	{
-		PositionX -= (0.120 + 0.030) * Millis;
-	}
+	PositionX -= GameSpeed * Millis;
 	
 	TeleportTimer += Millis;
 

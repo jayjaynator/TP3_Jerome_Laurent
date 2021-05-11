@@ -3,10 +3,10 @@
 GameObject::GameObject(double X, double Y)
 	:PositionX{X}
 	,PositionY{Y}
-	,AccelerationActive{false}
+	
 {}
 
-void GameObject::Update(long Millis, bool Acceleration)
+void GameObject::Update(long Millis)
 {}
 
 double GameObject::GetX() const
@@ -27,14 +27,4 @@ void GameObject::SetX(double X)
 void GameObject::SetY(double Y)
 {
 	PositionY = Y;
-}
-
-void GameObject::ActiverAcceleration()
-{
-	AccelerationActive = true;
-}
-
-void GameObject::DesactiverAcceleration()
-{
-	AccelerationActive = false;
 }

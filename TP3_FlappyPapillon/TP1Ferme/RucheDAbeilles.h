@@ -7,7 +7,7 @@ public:
 	RucheDAbeilles(double PositionDepartY);
 	~RucheDAbeilles();
 
-	virtual void Update(long Millis, bool Acceleration) override;
+	virtual void Update(long Millis) override;
 
 	virtual double GetLargeur() override;
 	virtual double GetHauteur() override;

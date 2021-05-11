@@ -41,13 +41,13 @@ void Partie::Update(long Millis)
     {
         return;
     }
-
-    Joueur.Update(Millis, Accelere);
+    bool Accelere = false;
+    Joueur.Update(Millis);
 
     // Mise à jour des obstacles
     for(auto& obstacle : obstacles)
     {
-        obstacle->Update(Millis, Accelere);
+        obstacle->Update(Millis);
     }
 
 
@@ -90,7 +90,7 @@ void Partie::Update(long Millis)
                     delete* obstacle;
                     obstacle = obstacles.erase(obstacle);
 
-                    Accelere = true;
+                    Acceleration();
                     break;
 
                 case 4: // RuchesDAbeilles
@@ -124,22 +124,17 @@ void Partie::Update(long Millis)
     }
 
     TimerFlashPapillon += Millis;
-    std::cout << TimerFlashPapillon << std::endl;
+
     if (TimerFlashPapillon > 500)
         TimerFlashPapillon = 0;
     
 
-    BG1.Update(Millis, Accelere);
-    BG2.Update(Millis, Accelere);
+    BG1.Update(Millis);
+    BG2.Update(Millis);
 
     TimerObstacle += 0.2 * Millis;
     if (DoitAjouterObstacle())
         AjouterObstacle();
-
-
-   
-
-
 
     SupressionObstacle();
 
@@ -340,4 +335,11 @@ double Partie::PosRandY(int Type)
         return 0;
         break;
     }
+}
+
+void Partie::Acceleration()
+{
+    GameSpeed += 0.05;
+
+    Joueur.Acceleration();
 }

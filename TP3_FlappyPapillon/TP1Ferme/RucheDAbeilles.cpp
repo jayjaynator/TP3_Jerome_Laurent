@@ -11,13 +11,10 @@ RucheDAbeilles::~RucheDAbeilles()
 {
 }
 
-void RucheDAbeilles::Update(long Millis, bool Acceleration)
+void RucheDAbeilles::Update(long Millis)
 {
-	PositionX -= 0.120 * Millis;
-	if (Acceleration)
-	{
-		PositionX -= (0.120 + 0.030) * Millis;
-	}
+	PositionX -= GameSpeed * Millis;
+	
 
 	if (IsGoingUp)
 	{
