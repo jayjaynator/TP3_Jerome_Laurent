@@ -153,6 +153,12 @@ void Papillon::Acceleration()
 {
     AccelerationY += 30;
 }
+
+void Papillon::ResetAcceleration()
+{
+    AccelerationY = 500;
+}
+
 int Papillon::GetVies() const
 {
     return Vies;

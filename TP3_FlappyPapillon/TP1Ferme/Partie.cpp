@@ -37,9 +37,28 @@ void Partie::Update(long Millis)
     // du jeu
     if (PartieFinie)
     {
+        TimerReset += Millis;
+       
+        if (TimerReset > 3000)
+        {
+            Joueur.GagnerUneVie(); Joueur.GagnerUneVie(); Joueur.GagnerUneVie();
+            GameSpeed = 0.12;
+            Joueur.ResetAcceleration();
+
+
+            std::vector<Obstacle*>::iterator obstacle;
+
+            for (obstacle = obstacles.begin(); obstacle != obstacles.end(); )
+            {
+                delete* obstacle;
+                obstacle = obstacles.erase(obstacle);
+            }
+
+            PartieFinie = false;
+        }
         return;
     }
-    bool Accelere = false;
+    
     Joueur.Update(Millis);
 
     // Mise à jour des obstacles

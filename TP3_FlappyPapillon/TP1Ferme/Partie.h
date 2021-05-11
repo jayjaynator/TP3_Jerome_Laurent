@@ -39,11 +39,13 @@ public:
 private:
     bool PartieFinie;
 
+
     Papillon Joueur;
     std::vector <Obstacle*> obstacles;
     
     double TimerObstacle = 0;
     double TimerFlashPapillon = 0;
+    double TimerReset = 0;
 
     Background BG1 = Background(0);
     Background BG2 = Background(SCREEN_WIDTH);

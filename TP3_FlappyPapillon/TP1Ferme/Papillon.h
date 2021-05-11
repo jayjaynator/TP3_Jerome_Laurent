@@ -30,7 +30,7 @@ public:
 	bool DetectionCollision(Obstacle* obstacle);
 
 	void Acceleration();
-
+	void ResetAcceleration();
 
 
 protected:
