@@ -19,15 +19,15 @@ Papillon::~Papillon()
 {}
 
 
-void Papillon::Update(long Millis, bool Acceleration)
+void Papillon::Update(long Millis)
 {
 	NbSecondes = Millis / 1000.0;
-
+    std::cout << GameSpeed;
 
     if (VelocityPlusGrandA299())
         ;
     else
-        GraviteAffecteVelocite(Acceleration);
+        GraviteAffecteVelocite();
 
 
     PositionY += VelocityY * NbSecondes;
@@ -48,7 +48,7 @@ void Papillon::Update(long Millis, bool Acceleration)
         if (NbSecInv > 0)
         {
             NbSecInv = NbSecInv - NbSecondes;
-            cout << "Papillon est invulnerable" << endl;
+            //cout << "Papillon est invulnerable" << endl;
         }
 
         if (NbSecInv <= 0)
@@ -70,12 +70,9 @@ double Papillon::GetHauteur() const
 {
     return Hauteur;
 }
-void Papillon::GraviteAffecteVelocite(bool Acceleration)
+void Papillon::GraviteAffecteVelocite()
 {
-    if (Acceleration)
-        VelocityY += +AccelerationY * NbSecondes + 30;
-    else
-        VelocityY += +AccelerationY * NbSecondes;
+        VelocityY += AccelerationY * NbSecondes;
 }
 void Papillon::Sauter()
 {
@@ -155,6 +152,10 @@ bool Papillon::DetectionCollision(Obstacle* obstacle)
         return true;
     else
         return false;
+}
+void Papillon::Acceleration()
+{
+    AccelerationY += 30;
 }
 int Papillon::GetVies() const
 {

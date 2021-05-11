@@ -15,16 +15,13 @@ Obstacle::~Obstacle()
 	
 }
 
-void Obstacle::Update(long Millis, bool Acceleration)
+void Obstacle::Update(long Millis)
 {
 	//if (PositionX == (-Largeur))
 	//	destroy obstacle
 
-	PositionX -= 0.120 * Millis;
-	if (Acceleration)
-	{
-		PositionX -= (0.120+0.030) * Millis;
-	}
+	PositionX -= GameSpeed * Millis;
+	
 }
 
 int Obstacle::GetType() const
