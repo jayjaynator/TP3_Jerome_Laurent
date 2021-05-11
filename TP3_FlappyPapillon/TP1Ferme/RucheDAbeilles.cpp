@@ -18,14 +18,14 @@ void RucheDAbeilles::Update(long Millis)
 
 	if (IsGoingUp)
 	{
-		PositionY -= 0.5 * Millis;
+		PositionY -= 0.1 * Millis;
 
 		if (PositionY <= 0)
 			IsGoingUp = false;	
 	}
 	else
 	{
-		PositionY += 0.5 * Millis;
+		PositionY += 0.1 * Millis;
 
 		if (PositionY >= SCREEN_HEIGHT - Hauteur)
 			IsGoingUp = true;
