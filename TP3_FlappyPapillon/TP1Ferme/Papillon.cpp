@@ -22,7 +22,6 @@ Papillon::~Papillon()
 void Papillon::Update(long Millis)
 {
 	NbSecondes = Millis / 1000.0;
-    std::cout << GameSpeed;
 
     if (VelocityPlusGrandA299())
         ;
@@ -31,7 +30,6 @@ void Papillon::Update(long Millis)
 
 
     PositionY += VelocityY * NbSecondes;
-    //cout << "AccelerationY = " << AccelerationY << ", VelocityY = " << VelocityY << endl;
 
 
     if (Input::PressedKeys[Input::Space])
@@ -48,14 +46,12 @@ void Papillon::Update(long Millis)
         if (NbSecInv > 0)
         {
             NbSecInv = NbSecInv - NbSecondes;
-            //cout << "Papillon est invulnerable" << endl;
         }
 
         if (NbSecInv <= 0)
         {
             Invulnerable = false;
             NbSecInv = 2;
-            cout << "Papillon n'est plus invulnerable" << endl;
         }
 
     }

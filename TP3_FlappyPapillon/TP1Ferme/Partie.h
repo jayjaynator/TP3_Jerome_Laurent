@@ -31,9 +31,10 @@ public:
     bool ConditionSupressionObstacle();
 
     double PosRandY(int Type);
-
-
     void Acceleration();
+
+    void Save();
+    void Load();
 
 private:
     bool PartieFinie;

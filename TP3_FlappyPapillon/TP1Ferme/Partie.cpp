@@ -3,29 +3,27 @@
 #include <algorithm>
 #include <array>
 #include <vector>
-
-#include "Input.h"
-#include "Constants.h"
-#include "Obstacle.h"
-#include "Papillon.h"
-#include "Render.h"
-#include "Background.h"
-
-//はいはい！
-
-#include "GameObject.h"
-
-#include "FiletAInsectes.h"
-#include "ToileDAraignee.h"
-#include "RucheDAbeilles.h"
-
-#include "BonusDeVie.h"
-#include "PanneauDAcceleration.h"
-
+#include <string>
+#include <fstream>
 #include <iostream>
 
+#include "Constants.h"
+#include "Input.h"
+#include "Render.h"
+
+#include "Background.h"
+#include "GameObject.h"
+#include "Papillon.h"
+#include "Obstacle.h"
+#include "BonusDeVie.h"
+#include "FiletAInsectes.h"
+#include "PanneauDAcceleration.h"
+#include "RucheDAbeilles.h"
+#include "ToileDAraignee.h"
+
+
 Partie::Partie()
-    : PartieFinie(false) {}
+    : PartieFinie(true) {}
 
 Partie::~Partie()
 {
@@ -65,10 +63,8 @@ void Partie::Update(long Millis)
                 switch (Type)
                 {
                 case 1: // BonusDeVie
-                    std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
                     if (Joueur.GetVies() < 3)
                         Joueur.GagnerUneVie();
-                    std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
 
                     delete* obstacle;
                     obstacle = obstacles.erase(obstacle);
@@ -78,9 +74,7 @@ void Partie::Update(long Millis)
                 case 2: // FiletAInsectes
                     if (Joueur.GetInvulnerable() == false)
                     {
-                        std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
                         Joueur.PerdreUneVie();
-                        std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
                         Joueur.DevientInvulnerable2Sec();
                     }
                     break;
@@ -96,9 +90,7 @@ void Partie::Update(long Millis)
                 case 4: // RuchesDAbeilles
                     if (Joueur.GetInvulnerable() == false)
                     {
-                        std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
                         Joueur.PerdreUneVie();
-                        std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
                         Joueur.DevientInvulnerable2Sec();
                     }
                     break;
@@ -106,9 +98,7 @@ void Partie::Update(long Millis)
                 case 5: // ToilesDAraignee
                     if (Joueur.GetInvulnerable() == false)
                     {
-                        std::cout << "Joueur avait " << Joueur.GetVies() << " vies" << std::endl;
                         Joueur.PerdreUneVie();
-                        std::cout << "Joueur a " << Joueur.GetVies() << " vies" << std::endl;
                         Joueur.DevientInvulnerable2Sec();
                     }
                     break;
@@ -137,6 +127,16 @@ void Partie::Update(long Millis)
         AjouterObstacle();
 
     SupressionObstacle();
+
+    if (Input::PressedKeys[Input::S])
+    {
+        Save();
+    }
+
+    if (Input::PressedKeys[Input::L])
+    {
+        Load();
+    }
 
     VerifierPartieFinie();
 }
@@ -342,4 +342,14 @@ void Partie::Acceleration()
     GameSpeed += 0.05;
 
     Joueur.Acceleration();
+}
+
+void Partie::Save()
+{
+    std::cout << "Saved";
+}
+
+void Partie::Load()
+{
+    std::cout << "Loaded";
 }
