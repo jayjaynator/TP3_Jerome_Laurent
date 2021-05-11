@@ -94,6 +94,9 @@ void Game::HandleInput(const SDL_Event& Event)
         case SDLK_l:
             Input::PressedKeys[Input::L] = false;
             break;
+        case SDLK_s:
+            Input::PressedKeys[Input::S] = false;
+            break;
         case SDLK_SPACE:
             Input::PressedKeys[Input::Space] = false;
             break;
@@ -102,7 +105,8 @@ void Game::HandleInput(const SDL_Event& Event)
 
     // Si on presse une touche
     case SDL_KEYDOWN:
-        switch(Event.key.keysym.sym) {
+        switch(Event.key.keysym.sym)
+        {
         case SDLK_d:
             Input::PressedKeys[Input::D] = true;
             break;
@@ -111,6 +115,9 @@ void Game::HandleInput(const SDL_Event& Event)
             break;
         case SDLK_l:
             Input::PressedKeys[Input::L] = true;
+            break;
+        case SDLK_s:
+            Input::PressedKeys[Input::S] = true;
             break;
         case SDLK_SPACE:
             Input::PressedKeys[Input::Space] = true;
