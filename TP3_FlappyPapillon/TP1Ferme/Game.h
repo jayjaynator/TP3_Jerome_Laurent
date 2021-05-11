@@ -14,7 +14,7 @@ public:
     void HandleInput(const SDL_Event& Event);
     void Update(long Millis);
     void Render(SDL_Renderer* Renderer) const;
-
+    
 protected:
     bool KeepPlaying;
     bool Pause;

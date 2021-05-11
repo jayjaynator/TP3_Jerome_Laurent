@@ -74,6 +74,7 @@ void Game::Loop(SDL_Renderer* Renderer)
         }
 
         LastFrameTime = FrameTime;
+
     }
 
     Render::FreeImgs();
@@ -147,3 +148,4 @@ void Game::Render(SDL_Renderer* Renderer) const
     
     SDL_RenderPresent(Renderer);
 }
+

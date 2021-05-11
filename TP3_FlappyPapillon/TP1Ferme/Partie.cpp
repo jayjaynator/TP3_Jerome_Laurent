@@ -54,6 +54,8 @@ void Partie::Update(long Millis)
                 obstacle = obstacles.erase(obstacle);
             }
 
+
+            TimerReset = 0;
             PartieFinie = false;
         }
         return;
@@ -367,14 +369,39 @@ void Partie::Save()
 {
     std::cout << "Saved";
 
-
-
+  /*  std::ofstream savefile("save.txt");
+    if (savefile.is_open())
+    {
+        savefile << << std::endl;
+        savefile << << std::endl;
+        savefile << << std::endl;
+        savefile << << std::endl;
+        savefile << << std::endl;
+        savefile << << std::endl;
+        savefile << << std::endl;
+    }
+    else std::cout << "Unable to open file";*/
+    return;
 }
 
 void Partie::Load()
 {
     std::cout << "Loaded";
 
+    /*std::string line;
+
+    std::ifstream savefile("example.txt");
+    if (savefile.is_open())
+    {
+        while (std::getline(savefile, line))
+        {
+            std::cout << line << '\n';
+        }
+        savefile.close();
+    }
+    else std::cout << "Unable to open file";*/
+
+    return;
 
 
 
