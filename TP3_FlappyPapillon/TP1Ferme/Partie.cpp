@@ -23,7 +23,7 @@
 
 
 Partie::Partie()
-    : PartieFinie(true) {}
+    : PartieFinie(false) {}
 
 Partie::~Partie()
 {
@@ -347,9 +347,16 @@ void Partie::Acceleration()
 void Partie::Save()
 {
     std::cout << "Saved";
+
+
+
 }
 
 void Partie::Load()
 {
     std::cout << "Loaded";
+
+
+
+
 }

@@ -143,5 +143,8 @@
     <ClCompile Include="Background.cpp">
       <Filter>Fichiers sources\TP3</Filter>
     </ClCompile>
+    <ClCompile Include="Constants.cpp">
+      <Filter>Fichiers sources\TP3\0_Jeux</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

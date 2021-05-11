@@ -1,3 +1,19 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (TP1Ferme.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  FiletAInsectes.cpp
-  TP1Ferme.vcxproj -> C:\Users\laure\Documents\GitHub\TP3_Jerome_Laurent\TP3_FlappyPapillon\x64\Debug\TP3.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (TP1Ferme.vcxproj). Cela peut entraîner un comportement de nettoyage et de regénération incorrect.
+  Partie.cpp
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(157,35): warning C4838: la conversion de 'double' en 'int' requiert une conversion restrictive
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(157,35): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(157,50): warning C4838: la conversion de 'double' en 'int' requiert une conversion restrictive
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(157,50): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(157,70): warning C4838: la conversion de 'double' en 'int' requiert une conversion restrictive
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(157,70): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(157,91): warning C4838: la conversion de 'double' en 'int' requiert une conversion restrictive
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(157,91): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(163,42): warning C4838: la conversion de 'double' en 'int' requiert une conversion restrictive
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(163,42): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(163,60): warning C4838: la conversion de 'double' en 'int' requiert une conversion restrictive
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(163,60): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(163,83): warning C4838: la conversion de 'double' en 'int' requiert une conversion restrictive
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(163,83): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(163,107): warning C4838: la conversion de 'double' en 'int' requiert une conversion restrictive
+D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\TP1Ferme\Partie.cpp(163,107): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+  TP1Ferme.vcxproj -> D:\03_Projets_Codes\TP3_Jerome_Laurent\TP3_FlappyPapillon\x64\Debug\TP3.exe

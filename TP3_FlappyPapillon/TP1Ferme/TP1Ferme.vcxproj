@@ -171,6 +171,7 @@
   <ItemGroup>
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="BonusDeVie.cpp" />
+    <ClCompile Include="Constants.cpp" />
     <ClCompile Include="FiletAInsectes.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
